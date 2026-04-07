@@ -8,35 +8,62 @@
 <meta name="keywords" content="automatización IA Cali, marketing digital Colombia, gestión redes sociales Cali, NexoIA, agencia IA Colombia">
 <meta property="og:title" content="NexoIA — Automatización con IA · Cali, Colombia">
 <meta property="og:description" content="Tu negocio en redes, en automático. Diagnóstico digital gratuito para negocios en Cali.">
-<meta property="og:image" content="https://via.placeholder.com/1200x630?text=NexoIA">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-/* ===== RESET Y TOKENS (igual que antes, se omite por brevedad, pero se mantiene completo en la entrega final) ===== */
+/* ── RESET ─────────────────────────────────────────────── */
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 button{font-family:inherit;cursor:pointer}
+
+/* ── TOKENS ─────────────────────────────────────────────── */
 :root{
-  --bg: #06100A; --bg2: #09160D; --bg3: #0D1F13; --surface: #112218; --surface2: #1A3028;
-  --border: rgba(77,186,135,0.09); --border2: rgba(77,186,135,0.20); --border3: rgba(77,186,135,0.40);
-  --green: #4DBA87; --green2: #2E9E67; --green3: #1A7A4A; --greenlt: #A8F0C8;
-  --white: #EFF9F4; --white2: #B8D8C5; --muted: #5E8870; --amber: #E8A838;
-  --fs: 'Fraunces', Georgia, serif; --fb: 'DM Sans', sans-serif; --fm: 'DM Mono', monospace;
+  --bg:        #06100A;
+  --bg2:       #09160D;
+  --bg3:       #0D1F13;
+  --surface:   #112218;
+  --surface2:  #1A3028;
+  --border:    rgba(77,186,135,0.09);
+  --border2:   rgba(77,186,135,0.20);
+  --border3:   rgba(77,186,135,0.40);
+  --green:     #4DBA87;
+  --green2:    #2E9E67;
+  --green3:    #1A7A4A;
+  --greenlt:   #A8F0C8;
+  --white:     #EFF9F4;
+  --white2:    #B8D8C5;
+  --muted:     #5E8870;
+  --amber:     #E8A838;
+  --fs: 'Fraunces', Georgia, serif;
+  --fb: 'DM Sans', sans-serif;
+  --fm: 'DM Mono', monospace;
 }
+
+/* ── BASE ───────────────────────────────────────────────── */
 body{font-family:var(--fb);background:var(--bg);color:var(--white);overflow-x:hidden;line-height:1.65}
 ::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:var(--bg2)}::-webkit-scrollbar-thumb{background:var(--green3);border-radius:4px}
 ::selection{background:rgba(77,186,135,.22);color:var(--white)}
 .z1{position:relative;z-index:1}
 .container{max-width:1140px;margin:0 auto;padding:0 36px;position:relative;z-index:1}
-body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse 75% 55% at -5% 5%,rgba(30,120,70,.07) 0%,transparent 55%),radial-gradient(ellipse 55% 45% at 105% 95%,rgba(77,186,135,.05) 0%,transparent 50%)}
-body::after{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.22;background-image:radial-gradient(rgba(77,186,135,.18) 1px,transparent 1px);background-size:28px 28px}
+
+/* grain bg */
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:radial-gradient(ellipse 75% 55% at -5% 5%,rgba(30,120,70,.07) 0%,transparent 55%),
+             radial-gradient(ellipse 55% 45% at 105% 95%,rgba(77,186,135,.05) 0%,transparent 50%)}
+body::after{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.22;
+  background-image:radial-gradient(rgba(77,186,135,.18) 1px,transparent 1px);background-size:28px 28px}
+
+/* ── TOPBAR ─────────────────────────────────────────────── */
 .topbar{background:var(--green);padding:9px 36px;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;font-size:13px;font-weight:500;color:var(--bg);position:relative;z-index:200}
 .topbar a{color:var(--bg);font-weight:700;text-decoration:underline}
 .topbar .social-ig{display:inline-flex;align-items:center;gap:6px;background:rgba(0,0,0,0.15);padding:4px 12px;border-radius:40px;text-decoration:none;font-weight:600}
-nav{position:sticky;top:0;z-index:100;background:rgba(6,16,10,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 36px}
+
+/* ── NAV ────────────────────────────────────────────────── */
+nav{position:sticky;top:0;z-index:100;background:rgba(6,16,10,.92);backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);padding:0 36px}
 .nav-inner{max-width:1140px;margin:0 auto;height:66px;display:flex;align-items:center;justify-content:space-between;gap:20px}
 .nav-logo{display:flex;align-items:center;gap:11px}
 .nav-logo-icon{width:34px;height:34px;background:var(--green);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
@@ -48,23 +75,166 @@ nav{position:sticky;top:0;z-index:100;background:rgba(6,16,10,.92);backdrop-filt
 .nav-cta{background:var(--green)!important;color:var(--bg)!important;font-weight:600!important}
 .ham{display:none;background:none;border:none;padding:4px;flex-direction:column;gap:5px}
 .ham span{display:block;width:22px;height:2px;background:var(--white2);border-radius:2px}
-h1{font-family:var(--fs);font-size:clamp(40px,5.5vw,66px);font-weight:400;line-height:1.06;letter-spacing:-2.5px;margin-bottom:22px}
+
+/* ── TYPOGRAPHY ─────────────────────────────────────────── */
+h1{font-family:var(--fs);font-size:clamp(40px,5.5vw,66px);font-weight:400;line-height:1.06;letter-spacing:-2.5px;color:var(--white);margin-bottom:22px}
 h1 em{font-style:italic;color:var(--green)}
-h2{font-family:var(--fs);font-size:clamp(28px,3.8vw,46px);font-weight:400;letter-spacing:-1.5px;line-height:1.1;margin-bottom:16px}
+h2{font-family:var(--fs);font-size:clamp(28px,3.8vw,46px);font-weight:400;letter-spacing:-1.5px;color:var(--white);line-height:1.1;margin-bottom:16px}
 h2 em{font-style:italic;color:var(--green)}
-h3{font-family:var(--fs);font-size:clamp(20px,2.4vw,27px);font-weight:400;letter-spacing:-.8px;margin-bottom:10px}
+h3{font-family:var(--fs);font-size:clamp(20px,2.4vw,27px);font-weight:400;color:var(--white);letter-spacing:-.8px;margin-bottom:10px}
 .eyebrow{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--green);font-weight:600;margin-bottom:12px;font-family:var(--fm)}
 .lead{font-size:16.5px;color:var(--white2);line-height:1.78;font-weight:300;max-width:560px}
-.btn-main{display:inline-flex;align-items:center;gap:9px;background:var(--green);color:var(--bg);padding:14px 28px;border-radius:9px;font-size:15px;font-weight:600;transition:all .2s;border:none}
+.lead-c{max-width:680px;text-align:center;margin:0 auto}
+
+/* ── BUTTONS ────────────────────────────────────────────── */
+.btn-main{display:inline-flex;align-items:center;gap:9px;background:var(--green);color:var(--bg);padding:14px 28px;border-radius:9px;
+  font-size:15px;font-weight:600;text-decoration:none;transition:all .2s;border:none;white-space:nowrap}
 .btn-main:hover{background:#6DCFA0;transform:translateY(-1px)}
-.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--white2);padding:14px 28px;border-radius:9px;border:1px solid var(--border2);transition:all .2s}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--white2);padding:14px 28px;
+  border-radius:9px;font-size:15px;text-decoration:none;border:1px solid var(--border2);transition:all .2s;white-space:nowrap}
 .btn-ghost:hover{border-color:var(--green);color:var(--green)}
 .btn-row{display:flex;gap:12px;flex-wrap:wrap}
+
+/* ── ANIMATIONS ─────────────────────────────────────────── */
+@keyframes blink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.65)}}
+@keyframes spin{to{transform:translate(-50%,-50%) rotate(360deg)}}
+@keyframes satpulse{0%,100%{opacity:.7}50%{opacity:1}}
 .fade{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
 .fade.vis{opacity:1;transform:none}
-.section{padding:96px 0}
-.section + .section{border-top:1px solid var(--border)}
-/* FLYERS (material promocional) */
+
+/* ══════════════════════════════════════════════════════════
+   HERO
+══════════════════════════════════════════════════════════ */
+#hero{min-height:100vh;display:flex;align-items:center}
+.hero-wrap{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;padding:80px 0}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(77,186,135,.08);
+  border:1px solid var(--border2);border-radius:20px;padding:6px 16px 6px 8px;
+  font-size:12px;color:var(--green);font-weight:500;margin-bottom:26px;letter-spacing:.5px;font-family:var(--fm)}
+.hero-dot{width:8px;height:8px;background:var(--green);border-radius:50%;animation:blink 2.2s ease infinite}
+.hero-proof{display:flex;gap:32px;margin-top:48px;padding-top:40px;border-top:1px solid var(--border)}
+.proof-stat .n{font-family:var(--fs);font-size:30px;font-weight:600;color:var(--white);letter-spacing:-1px;line-height:1}
+.proof-stat .n em{color:var(--green);font-style:normal}
+.proof-stat .l{font-size:12px;color:var(--muted);margin-top:4px;line-height:1.4}
+.hero-viz{position:relative;height:460px;display:flex;align-items:center;justify-content:center}
+.orbit{position:absolute;width:340px;height:340px;border-radius:50%;border:1px dashed rgba(77,186,135,.14);
+  top:50%;left:50%;transform:translate(-50%,-50%);animation:spin 32s linear infinite}
+.orbit2{width:215px;height:215px;animation:spin 22s linear reverse infinite;border-color:rgba(77,186,135,.07)}
+.viz-center{position:absolute;width:152px;height:152px;border-radius:50%;border:1.5px solid var(--green3);
+  background:var(--bg3);display:flex;flex-direction:column;align-items:center;justify-content:center;
+  top:50%;left:50%;transform:translate(-50%,-50%);z-index:5}
+.vc-lbl{font-size:10px;letter-spacing:3px;color:var(--green);text-transform:uppercase;margin-bottom:5px;font-family:var(--fm)}
+.vc-ico{font-family:var(--fs);font-size:30px;font-weight:700;color:var(--white)}
+.sat{position:absolute;background:var(--surface2);border:1px solid var(--border2);border-radius:12px;padding:11px 15px;
+  font-size:12px;color:var(--white2);display:flex;flex-direction:column;align-items:center;gap:5px;animation:satpulse 3s ease infinite}
+.sat em{font-size:19px;font-style:normal}.sat span{font-size:10.5px;color:var(--muted)}
+.sat.s1{top:22px;left:50%;transform:translateX(-50%);animation-delay:0s}
+.sat.s2{top:50%;right:14px;transform:translateY(-50%);animation-delay:.7s}
+.sat.s3{bottom:22px;right:74px;animation-delay:1.4s}
+.sat.s4{bottom:22px;left:74px;animation-delay:2.1s}
+.sat.s5{top:50%;left:14px;transform:translateY(-50%);animation-delay:2.8s}
+
+/* ── SECTOR STRIP ───────────────────────────────────────── */
+.sector-strip{border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  padding:28px 0;background:var(--bg2)}
+.sector-inner{display:flex;align-items:center;gap:28px;flex-wrap:wrap;justify-content:center}
+.sector-label{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);white-space:nowrap;font-family:var(--fm)}
+.pills{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.pill{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:7px 15px;
+  font-size:13px;color:var(--white2);transition:all .2s;cursor:default}
+.pill:hover{border-color:var(--border3);color:var(--green)}
+
+/* ══════════════════════════════════════════════════════════
+   SERVICIOS
+══════════════════════════════════════════════════════════ */
+.srv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:48px}
+.srv-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:32px 28px;
+  display:flex;flex-direction:column;transition:border-color .25s,transform .25s;position:relative;overflow:hidden}
+.srv-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--green3);
+  transform:scaleX(0);transform-origin:left;transition:transform .35s ease}
+.srv-card:hover{border-color:var(--border2);transform:translateY(-4px)}
+.srv-card:hover::before{transform:scaleX(1)}
+.srv-ico{width:48px;height:48px;background:rgba(77,186,135,.1);border:1px solid var(--border2);
+  border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:20px}
+.srv-card p{font-size:14px;color:var(--muted);line-height:1.75;flex:1;margin-bottom:20px}
+.srv-tag{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;color:var(--green);
+  background:rgba(77,186,135,.08);padding:4px 12px;border-radius:20px;font-family:var(--fm);letter-spacing:.3px}
+.srv-items{list-style:none;display:flex;flex-direction:column;gap:9px;margin:16px 0 20px}
+.srv-items li{font-size:13.5px;color:var(--white2);display:flex;align-items:flex-start;gap:9px;line-height:1.5}
+.srv-items li::before{content:'→';color:var(--green);flex-shrink:0;margin-top:1px}
+
+/* ══════════════════════════════════════════════════════════
+   PROCESO
+══════════════════════════════════════════════════════════ */
+.proc-wrap{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;margin-top:48px}
+.proc-steps{display:flex;flex-direction:column;gap:0}
+.proc-step{display:flex;gap:20px;padding:26px 0;border-bottom:1px solid var(--border);position:relative}
+.proc-step:last-child{border-bottom:none}
+.proc-step::after{content:'';position:absolute;left:15px;bottom:-1px;top:58px;width:1px;
+  background:linear-gradient(to bottom,var(--green3),transparent)}
+.proc-step:last-child::after{display:none}
+.proc-n{font-family:var(--fm);font-size:11px;color:var(--green);background:rgba(77,186,135,.1);
+  border:1px solid var(--border2);width:32px;height:32px;border-radius:8px;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.proc-step h3{font-size:16px;font-weight:500;color:var(--white);margin-bottom:5px;font-family:var(--fs);font-style:italic}
+.proc-step p{font-size:13.5px;color:var(--muted);line-height:1.7}
+.proc-step .proc-badge{display:inline-block;margin-top:8px;font-size:11px;color:var(--amber);
+  background:rgba(232,168,56,.1);padding:3px 10px;border-radius:20px;font-family:var(--fm)}
+.tool-panel{background:var(--surface);border:1px solid var(--border2);border-radius:18px;padding:28px}
+.tp-head{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:22px;font-family:var(--fm)}
+.tool-item{display:flex;align-items:center;gap:13px;background:var(--bg2);border:1px solid var(--border);
+  border-radius:10px;padding:13px 16px;margin-bottom:8px;transition:border-color .2s}
+.tool-item:hover{border-color:var(--border2)}
+.ticon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
+.t-name{font-size:13.5px;font-weight:500;color:var(--white)}
+.t-desc{font-size:11.5px;color:var(--muted);margin-top:1px}
+.tool-conn{display:flex;justify-content:center;padding:2px 0}
+.tool-conn span{font-size:13px;color:var(--border3)}
+.tp-note{margin-top:18px;padding:12px 16px;background:rgba(77,186,135,.06);border-radius:8px;
+  border:1px solid var(--border);font-size:12.5px;color:var(--white2);line-height:1.6}
+.tp-note strong{color:var(--green)}
+
+/* ══════════════════════════════════════════════════════════
+   SECTORES
+══════════════════════════════════════════════════════════ */
+.sec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:40px}
+.sec-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px;
+  transition:all .25s;cursor:default}
+.sec-card:hover{border-color:var(--border3);transform:translateY(-3px)}
+.sec-card .sico{font-size:26px;margin-bottom:13px;display:block}
+.sec-card h3{font-size:15px;font-weight:500;color:var(--white);margin-bottom:7px}
+.sec-card p{font-size:13px;color:var(--muted);line-height:1.7}
+.sec-card .stag{display:inline-block;margin-top:10px;font-size:11px;color:var(--green);
+  background:rgba(77,186,135,.08);padding:3px 10px;border-radius:20px}
+
+/* ══════════════════════════════════════════════════════════
+   DIAGNÓSTICO
+══════════════════════════════════════════════════════════ */
+.diag-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:44px}
+.diag-card{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:32px 26px;
+  display:flex;flex-direction:column;position:relative;transition:border-color .2s}
+.diag-card:hover{border-color:var(--border2)}
+.diag-card.featured{border-color:var(--green3);background:var(--surface)}
+.diag-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--green);color:var(--bg);
+  font-size:11px;font-weight:700;padding:4px 16px;border-radius:20px;white-space:nowrap;letter-spacing:.5px;font-family:var(--fm)}
+.diag-plan{font-family:var(--fm);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.diag-name{font-family:var(--fs);font-size:22px;font-weight:400;color:var(--white);margin-bottom:6px}
+.diag-sub{font-size:13px;color:var(--muted);margin-bottom:20px;line-height:1.5}
+.diag-div{height:1px;background:var(--border);margin:16px 0}
+.diag-feats{list-style:none;display:flex;flex-direction:column;gap:9px;flex:1;margin-bottom:24px}
+.diag-feats li{font-size:13.5px;color:var(--white2);display:flex;align-items:flex-start;gap:9px;line-height:1.5}
+.diag-feats li.off{color:var(--muted)}
+.ck{color:var(--green);flex-shrink:0}.dk{color:var(--border3);flex-shrink:0}
+.diag-btn{display:block;text-align:center;padding:13px;border-radius:9px;font-size:14px;font-weight:500;
+  border:1px solid var(--border2);color:var(--white2);transition:all .2s;cursor:pointer;background:transparent}
+.diag-btn:hover{border-color:var(--green);color:var(--green)}
+.diag-btn.feat{background:var(--green);color:var(--bg);border-color:var(--green)}
+.diag-btn.feat:hover{background:#6DCFA0}
+.diag-note{text-align:center;margin-top:20px;font-size:13px;color:var(--muted)}
+.diag-note strong{color:var(--white2)}
+
+/* ══════════════════════════════════════════════════════════
+   FLYERS
+══════════════════════════════════════════════════════════ */
 .flyer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px;margin-top:48px}
 .flyer-card{background:linear-gradient(145deg,var(--surface) 0%,var(--bg2) 100%);border:1px solid var(--border2);border-radius:28px;padding:28px 24px;transition:all 0.25s;position:relative;overflow:hidden;box-shadow:0 12px 28px -8px rgba(0,0,0,0.3)}
 .flyer-card::after{content:'';position:absolute;top:-30%;right:-30%;width:180px;height:180px;background:radial-gradient(circle,var(--green3) 0%,transparent 70%);opacity:0.1;border-radius:50%;pointer-events:none}
@@ -76,15 +246,68 @@ h3{font-family:var(--fs);font-size:clamp(20px,2.4vw,27px);font-weight:400;letter
 .flyer-offer{background:rgba(77,186,135,0.12);border-left:3px solid var(--green);padding:12px 16px;border-radius:12px;margin:20px 0;font-weight:500}
 .flyer-cta{display:flex;align-items:center;justify-content:space-between;margin-top:20px;flex-wrap:wrap;gap:12px}
 .qr-sim{width:48px;height:48px;background:var(--bg3);border:1px solid var(--border2);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;color:var(--green)}
+
+/* ══════════════════════════════════════════════════════════
+   FAQ & CTA & FOOTER
+══════════════════════════════════════════════════════════ */
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 64px;margin-top:36px}
+.faq-list{display:flex;flex-direction:column}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-item:first-child{border-top:1px solid var(--border)}
+.faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;
+  padding:18px 0;background:none;border:none;color:var(--white);font-size:15px;text-align:left;
+  cursor:pointer;transition:color .2s}
+.faq-q:hover{color:var(--green)}
+.faq-icon{font-size:20px;color:var(--green3);transition:transform .25s;flex-shrink:0}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .25s}
+.faq-a p{font-size:14px;color:var(--muted);line-height:1.8;padding-bottom:18px}
+.faq-item.open .faq-icon{transform:rotate(45deg)}
+.faq-item.open .faq-a{max-height:300px}
+.cta-sec{padding:96px 0;background:var(--bg2);border-top:1px solid var(--border)}
+.cta-inner{max-width:680px;margin:0 auto;text-align:center}
+.contact-row{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:40px}
+.cc{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 20px;text-align:left}
+.cc-l{font-size:11px;color:var(--muted);font-family:var(--fm);letter-spacing:.5px;margin-bottom:4px}
+.cc-v{font-size:14px;color:var(--white2);font-weight:500}
+.cc-v a{color:var(--green);transition:opacity .2s}
 .ig-link{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.03);border-radius:40px;padding:6px 14px;font-size:13px;color:var(--green);border:1px solid var(--border2);transition:0.2s}
 .ig-link:hover{background:var(--green);color:var(--bg);border-color:var(--green)}
-/* footer ajustes */
+footer{border-top:1px solid var(--border);position:relative;z-index:1}
+.ft{max-width:1140px;margin:0 auto;padding:0 36px}
+.ft-top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:48px;padding:60px 0 48px}
+.footer-brand .fb-logo{font-family:var(--fs);font-size:24px;font-weight:700;color:var(--white);margin-bottom:14px;letter-spacing:-.5px}
+.footer-brand .fb-logo span{color:var(--green)}
+.footer-brand p{font-size:13.5px;color:var(--muted);line-height:1.75;max-width:280px}
 .ft-col h4{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);font-family:var(--fm);margin-bottom:16px}
 .ft-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
 .ft-col ul a{font-size:13.5px;color:var(--white2);transition:color .2s}
 .ft-col ul a:hover{color:var(--green)}
 .ft-bot{border-top:1px solid var(--border);padding:22px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
-@media(max-width:900px){.hero-wrap{grid-template-columns:1fr}.hero-viz{display:none}.srv-grid,.sec-grid,.diag-grid,.flyer-grid{grid-template-columns:1fr}.nav-links{display:none}.ham{display:flex}.container{padding:0 20px}}
+.ft-bot p{font-size:12.5px;color:var(--muted)}
+.ft-bot strong{color:var(--white2)}
+.wa-soon{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);
+  background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:5px 12px;font-family:var(--fm)}
+.wa-soon span{color:var(--amber)}
+.section{padding:96px 0}
+.section + .section{border-top:1px solid var(--border)}
+@media(max-width:900px){
+  .hero-wrap{grid-template-columns:1fr;gap:40px;padding:60px 0}
+  .hero-viz{display:none}
+  .srv-grid,.sec-grid,.diag-grid,.flyer-grid{grid-template-columns:1fr}
+  .proc-wrap{grid-template-columns:1fr;gap:36px}
+  .faq-grid{grid-template-columns:1fr}
+  .ft-top{grid-template-columns:1fr 1fr;gap:32px}
+  .nav-links{display:none}.ham{display:flex}
+  .container{padding:0 20px}
+  nav{padding:0 20px}
+  .section{padding:64px 0}
+}
+@media(max-width:560px){
+  .hero-proof{flex-wrap:wrap;gap:22px}
+  .ft-top{grid-template-columns:1fr}
+  .btn-row{flex-direction:column}
+  .contact-row{flex-direction:column}
+}
 </style>
 </head>
 <body>
@@ -109,114 +332,35 @@ h3{font-family:var(--fs);font-size:clamp(20px,2.4vw,27px);font-weight:400;letter
   </div>
 </nav>
 
-<!-- HERO (resumido por brevedad pero completo en entrega) -->
-<section id="hero"><div class="container"><div class="hero-wrap"><div class="z1"><div class="hero-eyebrow"><div class="hero-dot"></div>Cali, Colombia · 2026</div><h1>Tus redes activas.<br>Tu contenido listo.<br><em>Sin que lo hagas tú.</em></h1><p class="lead">Gestionamos tu presencia digital con IA. Instagram, Facebook y TikTok activos, profesionales y consistentes.</p><div class="btn-row"><a id="cta-hero" href="#" class="btn-main">📧 Solicitar Diagnóstico</a><a href="#servicios" class="btn-ghost">Ver servicios →</a></div><div class="hero-proof"><div class="proof-stat"><div class="n">20<em>+</em></div><div class="l">posts/mes</div></div><div class="proof-stat"><div class="n">3<em>h</em></div><div class="l">ahorro semanal</div></div><div class="proof-stat"><div class="n">100<em>%</em></div><div class="l">enfocado IA</div></div></div></div><div class="hero-viz"><div class="orbit"></div><div class="orbit orbit2"></div><div class="viz-center"><div class="vc-lbl">NexoIA</div><div class="vc-ico">✦</div></div><div class="sat s1"><em>📸</em><span>Instagram</span></div><div class="sat s2"><em>🎵</em><span>TikTok</span></div><div class="sat s3"><em>💬</em><span>DMs</span></div><div class="sat s4"><em>📊</em><span>Reportes</span></div><div class="sat s5"><em>🤖</em><span>IA</span></div></div></div></div></section>
+<!-- HERO -->
+<section id="hero"><div class="container"><div class="hero-wrap"><div class="z1"><div class="hero-eyebrow"><div class="hero-dot"></div>Cali, Colombia · 2026</div><h1>Tus redes activas.<br>Tu contenido listo.<br><em>Sin que lo hagas tú.</em></h1><p class="lead" style="margin-bottom:36px">Gestionamos tu presencia digital con IA. Instagram, Facebook y TikTok activos, profesionales y consistentes.</p><div class="btn-row"><a id="cta-hero" href="#" class="btn-main">📧 Solicitar Diagnóstico</a><a href="#servicios" class="btn-ghost">Ver servicios →</a></div><div class="hero-proof"><div class="proof-stat"><div class="n">20<em>+</em></div><div class="l">posts/mes</div></div><div class="proof-stat"><div class="n">3<em>h</em></div><div class="l">ahorro semanal</div></div><div class="proof-stat"><div class="n">100<em>%</em></div><div class="l">enfocado IA</div></div></div></div><div class="hero-viz"><div class="orbit"></div><div class="orbit orbit2"></div><div class="viz-center"><div class="vc-lbl">NexoIA</div><div class="vc-ico">✦</div></div><div class="sat s1"><em>📸</em><span>Instagram</span></div><div class="sat s2"><em>🎵</em><span>TikTok</span></div><div class="sat s3"><em>💬</em><span>DMs</span></div><div class="sat s4"><em>📊</em><span>Reportes</span></div><div class="sat s5"><em>🤖</em><span>IA</span></div></div></div></div></section>
 
-<!-- Servicios, Proceso, Sectores, Diagnóstico (igual que antes, se mantienen funcionales) -->
+<!-- SECTOR STRIP -->
+<div class="sector-strip z1"><div class="sector-inner"><span class="sector-label">Negocios que impulsamos</span><div class="pills"><span class="pill">Restaurantes</span><span class="pill">Peluquerías</span><span class="pill">Consultorios</span><span class="pill">Tiendas</span><span class="pill">Academias</span><span class="pill">Inmobiliarias</span><span class="pill">Servicios técnicos</span><span class="pill">Emprendimientos</span></div></div></div>
 
-<!-- ════════════════════════════════════════════════════════════ -->
-<!-- NUEVA SECCIÓN: FLYERS PUBLICITARIOS (material promocional)   -->
-<!-- ════════════════════════════════════════════════════════════ -->
-<section id="flyers" class="section z1" style="background:var(--bg2)">
-<div class="container">
-  <div class="eyebrow">Material promocional</div>
-  <h2>Flyers listos para <em>compartir o imprimir</em></h2>
-  <p class="lead" style="margin-bottom:24px">Descarga, comparte en historias o usa estos diseños como base para tu publicidad. Cada flyer incluye llamado a la acción y nuestros datos de contacto.</p>
-  
-  <div class="flyer-grid">
-    <!-- Flyer 1: Diagnóstico gratuito -->
-    <div class="flyer-card fade">
-      <div class="flyer-badge">🔥 OFERTA LIMITADA</div>
-      <div class="flyer-title">Diagnóstico <span>Digital</span><br>Sin costo</div>
-      <div class="flyer-desc">Analizamos tu presencia online, redes sociales y competencia local. Recibe un reporte con acciones concretas para crecer.</div>
-      <div class="flyer-offer">📲 Incluye: revisión de perfil, alcance orgánico y recomendaciones IA.</div>
-      <div class="flyer-cta">
-        <a id="flyer1-cta" href="#" class="btn-main" style="padding:8px 18px; font-size:13px">Reclamar diagnóstico →</a>
-        <div class="qr-sim" title="Escanea para contacto">📧</div>
-      </div>
-      <div style="margin-top:16px; font-size:11px; color:var(--muted); display:flex; gap:12px; justify-content:space-between">
-        <span>✧ @nexoia_cali</span>
-        <span>✧ nexoia.cali@gmail.com</span>
-      </div>
-    </div>
+<!-- SERVICIOS -->
+<section id="servicios" class="section z1"><div class="container"><div class="eyebrow">Lo que hacemos</div><h2>Tres servicios. <em>Un solo objetivo:</em><br>que tu negocio sea visible.</h2><p class="lead" style="margin-top:12px">Atacamos los tres frentes que más impactan la presencia digital de un negocio local en Cali.</p><div class="srv-grid"><div class="srv-card fade"><div class="srv-ico">📱</div><h3>Gestión de contenido con IA</h3><p>Creamos, diseñamos y publicamos tu contenido en Instagram, Facebook y TikTok usando inteligencia artificial.</p><ul class="srv-items"><li>20+ posts mensuales diseñados</li><li>Captions con tono de tu marca</li><li>Historias y reels profesionales</li><li>Respuesta a comentarios y DMs</li></ul><div class="srv-tag">Instagram · Facebook · TikTok</div></div><div class="srv-card fade" style="transition-delay:.1s"><div class="srv-ico">🔍</div><h3>Optimización de visibilidad</h3><p>Optimizamos tu perfil digital para que aparezcas cuando alguien busca lo que ofreces en Cali.</p><ul class="srv-items"><li>Optimización de bio y perfil</li><li>Hashtags estratégicos Cali</li><li>Google Business Profile activo</li><li>Análisis de competencia local</li></ul><div class="srv-tag">Sin pautar · Alcance orgánico</div></div><div class="srv-card fade" style="transition-delay:.2s"><div class="srv-ico">🤖</div><h3>Auditoría de impacto IA</h3><p>Analizamos tu situación digital actual e identificamos qué frena tu crecimiento.</p><ul class="srv-items"><li>Análisis completo de redes</li><li>Diagnóstico vs competencia</li><li>Oportunidades perdidas</li><li>Plan de acción personalizado</li></ul><div class="srv-tag">Punto de partida recomendado</div></div></div><div style="margin-top:24px;background:var(--surface);border-radius:12px;padding:20px;display:flex;gap:14px"><div style="font-size:22px">💬</div><div><p style="font-weight:500;margin-bottom:4px">Nota sobre WhatsApp Business</p><p style="font-size:13.5px;color:var(--muted)">La integración con WhatsApp requiere API oficial. Próximamente. Por ahora gestionamos Instagram, Facebook, TikTok y DMs.</p></div></div></div></section>
 
-    <!-- Flyer 2: Gestión de contenido IA -->
-    <div class="flyer-card fade" style="transition-delay:0.1s">
-      <div class="flyer-badge">🚀 MÁS VENDIDO</div>
-      <div class="flyer-title">Contenido <span>automático</span><br>20 posts/mes</div>
-      <div class="flyer-desc">Diseños profesionales, captions con IA, publicación automática en Instagram, Facebook y TikTok.</div>
-      <div class="flyer-offer">🎯 Incluye: historias, reels, respuesta a comentarios y reporte mensual.</div>
-      <div class="flyer-cta">
-        <a id="flyer2-cta" href="#" class="btn-main" style="padding:8px 18px; font-size:13px">Quiero este plan →</a>
-        <div class="qr-sim">🤖</div>
-      </div>
-      <div style="margin-top:16px; font-size:11px; color:var(--muted); display:flex; gap:12px; justify-content:space-between">
-        <span>📸 @nexoia_cali</span>
-        <span>⏳ 2 días de activación</span>
-      </div>
-    </div>
+<!-- PROCESO -->
+<section id="proceso" class="section z1" style="background:var(--bg2)"><div class="container"><div class="eyebrow">Nuestro proceso</div><h2>Así trabajamos. <em>Sin complicaciones.</em></h2><p class="lead" style="margin-top:12px">Tres pasos claros y tu negocio ya está en marcha.</p><div class="proc-wrap"><div class="proc-steps"><div class="proc-step fade"><div class="proc-n">01</div><div><h3>Diagnóstico de impacto</h3><p>Analizamos tu situación digital actual: redes, Google, competencia. Recibes un mapa claro.</p><span class="proc-badge">→ Reporte con prioridades</span></div></div><div class="proc-step fade"><div class="proc-n">02</div><div><h3>Estrategia personalizada</h3><p>Diseñamos tu estrategia de contenido: qué publicar, cuándo y en qué plataformas.</p><span class="proc-badge">→ Calendario de contenido</span></div></div><div class="proc-step fade"><div class="proc-n">03</div><div><h3>Ejecución con IA</h3><p>Producimos y publicamos contenido consistente cada mes. Recibes reportes mensuales.</p><span class="proc-badge">→ 20+ posts + reporte</span></div></div></div><div class="fade"><div class="tool-panel"><div class="tp-head">Herramientas que usamos</div><div class="tool-item"><div class="ticon">🤖</div><div><div class="t-name">Claude AI</div><div class="t-desc">Redacción de captions y estrategia</div></div></div><div class="tool-conn"><span>↓</span></div><div class="tool-item"><div class="ticon">🎨</div><div><div class="t-name">Canva Pro + IA</div><div class="t-desc">Diseño profesional</div></div></div><div class="tool-conn"><span>↓</span></div><div class="tool-item"><div class="ticon">🎬</div><div><div class="t-name">CapCut IA</div><div class="t-desc">Edición de reels automática</div></div></div><div class="tool-conn"><span>↓</span></div><div class="tool-item"><div class="ticon">📅</div><div><div class="t-name">Meta Business Suite</div><div class="t-desc">Programación y análisis</div></div></div><div class="tp-note"><strong>Próximamente:</strong> WhatsApp Business API.</div></div></div></div></div></section>
 
-    <!-- Flyer 3: Especial para emprendedores Cali -->
-    <div class="flyer-card fade" style="transition-delay:0.2s">
-      <div class="flyer-badge">📍 SOLO CALI</div>
-      <div class="flyer-title">Emprende <span>visible</span><br>Desde $0 de inversión</div>
-      <div class="flyer-desc">Primer mes de gestión con 30% de descuento para negocios nuevos en Cali, Yumbo, Jamundí o Palmira.</div>
-      <div class="flyer-offer">🎁 Bonos: optimización de Google Business + kit de 10 plantillas Canva.</div>
-      <div class="flyer-cta">
-        <a id="flyer3-cta" href="#" class="btn-main" style="padding:8px 18px; font-size:13px">Aprovechar descuento →</a>
-        <div class="qr-sim">💚</div>
-      </div>
-      <div style="margin-top:16px; font-size:11px; color:var(--muted); display:flex; gap:12px; justify-content:space-between">
-        <span>✧ Cupos limitados</span>
-        <span>✧ Síguenos @nexoia_cali</span>
-      </div>
-    </div>
-  </div>
+<!-- SECTORES -->
+<section id="sectores" class="section z1"><div class="container"><div class="eyebrow">A quién ayudamos</div><h2>Para cualquier negocio en Cali<br>que quiera <em>crecer en digital.</em></h2><div class="sec-grid"><div class="sec-card fade"><span class="sico">🍽️</span><h3>Restaurantes y comida</h3><p>Fotos que dan hambre, reels del ambiente, clientes que llegan por Instagram.</p><span class="stag">Instagram · TikTok</span></div><div class="sec-card fade"><span class="sico">✂️</span><h3>Peluquerías y salones</h3><p>Antes/después, promociones semanales, portafolio digital que atrae clientas.</p><span class="stag">Instagram · Reels</span></div><div class="sec-card fade"><span class="sico">🏥</span><h3>Consultorios y salud</h3><p>Contenido educativo que genera confianza y convierte seguidores en pacientes.</p><span class="stag">Educación · Confianza</span></div><div class="sec-card fade"><span class="sico">👗</span><h3>Tiendas y boutiques</h3><p>Catálogo visual atractivo, lanzamientos, ventas desde Instagram.</p><span class="stag">Catálogo · DMs</span></div><div class="sec-card fade"><span class="sico">🏗️</span><h3>Servicios técnicos</h3><p>Antes/después, testimonios, credibilidad que genera nuevos contratos.</p><span class="stag">Google · Facebook</span></div><div class="sec-card fade"><span class="sico">🚀</span><h3>Emprendimientos</h3><p>Construimos tu marca digital desde cero sin que sepas de marketing.</p><span class="stag">Desde cero · Todas las redes</span></div></div></div></section>
 
-  <!-- Nota para el usuario: prompt para generar más flyers con IA -->
-  <div style="margin-top: 48px; background: var(--surface); border-radius: 20px; padding: 24px; border: 1px solid var(--border2);">
-    <details>
-      <summary style="font-weight: 600; cursor: pointer; color: var(--green); font-family: var(--fm);">📄 PROMPT para que Claude (o cualquier IA) genere más flyers personalizados</summary>
-      <div style="margin-top: 20px; font-size: 14px; line-height: 1.7; background: var(--bg3); padding: 20px; border-radius: 16px; font-family: monospace; white-space: pre-wrap; color: var(--white2);">
-        ✦✦✦ COPIA ESTE PROMPT Y PÉGALO EN CLAUDE.AI ✦✦✦
+<!-- DIAGNÓSTICO -->
+<section id="diagnostico" class="section z1" style="background:var(--bg2)"><div class="container"><div class="eyebrow">Por dónde empezar</div><h2>Elige tu <em>punto de entrada.</em></h2><p class="lead" style="margin-top:12px">Tres formas de trabajar con NexoIA, según tu momento actual.</p><div class="diag-grid"><div class="diag-card fade"><div class="diag-plan">Punto de partida</div><div class="diag-name">Diagnóstico Digital</div><div class="diag-sub">Conoce exactamente el estado de tu presencia digital y qué priorizar.</div><div class="diag-div"></div><ul class="diag-feats"><li><span class="ck">✓</span> Análisis de redes actuales</li><li><span class="ck">✓</span> Revisión en Google</li><li><span class="ck">✓</span> Análisis competencia local</li><li><span class="ck">✓</span> Reporte con prioridades</li><li><span class="dk">–</span><span style="color:var(--muted)">Sin producción de contenido</span></li></ul><a id="btn-diag1" href="#" class="diag-btn">Solicitar diagnóstico</a></div><div class="diag-card featured fade"><div class="diag-badge">Más solicitado</div><div class="diag-plan">Servicio mensual</div><div class="diag-name">Gestión de Contenido</div><div class="diag-sub">Todo listo, consistente y profesional. Tú das las fotos, nosotros hacemos lo demás.</div><div class="diag-div"></div><ul class="diag-feats"><li><span class="ck">✓</span> Diagnóstico inicial incluido</li><li><span class="ck">✓</span> 20 posts/mes publicados</li><li><span class="ck">✓</span> Historias y reels con IA</li><li><span class="ck">✓</span> Gestión de comentarios y DMs</li><li><span class="ck">✓</span> Reporte mensual de resultados</li></ul><a id="btn-diag2" href="#" class="diag-btn feat">Solicitar diagnóstico</a></div><div class="diag-card fade"><div class="diag-plan">Nivel avanzado</div><div class="diag-name">Auditoría + Estrategia</div><div class="diag-sub">Para negocios que ya tienen presencia pero no crecen como deberían.</div><div class="diag-div"></div><ul class="diag-feats"><li><span class="ck">✓</span> Auditoría de impacto completa</li><li><span class="ck">✓</span> Estrategia de contenido 3 meses</li><li><span class="ck">✓</span> Análisis de audiencias</li><li><span class="ck">✓</span> Oportunidades perdidas</li><li><span class="ck">✓</span> Plan de acción priorizado</li></ul><a id="btn-diag3" href="#" class="diag-btn">Solicitar diagnóstico</a></div></div><p class="diag-note">Todos empiezan con el mismo paso: <strong>escríbenos y cuéntanos tu negocio.</strong></p></div></section>
 
-        "Actúa como un diseñador experto en marketing digital. Necesito que crees 3 flyers publicitarios para NexoIA, una agencia de automatización con IA en Cali, Colombia.
+<!-- FLYERS (sin el bloque del prompt) -->
+<section id="flyers" class="section z1" style="background:var(--bg2)"><div class="container"><div class="eyebrow">Material promocional</div><h2>Flyers listos para <em>compartir o imprimir</em></h2><p class="lead" style="margin-bottom:24px">Descarga, comparte en historias o usa estos diseños como base para tu publicidad.</p><div class="flyer-grid"><div class="flyer-card fade"><div class="flyer-badge">🔥 OFERTA LIMITADA</div><div class="flyer-title">Diagnóstico <span>Digital</span><br>Sin costo</div><div class="flyer-desc">Analizamos tu presencia online, redes sociales y competencia local.</div><div class="flyer-offer">📲 Incluye: revisión de perfil, alcance orgánico y recomendaciones IA.</div><div class="flyer-cta"><a id="flyer1-cta" href="#" class="btn-main" style="padding:8px 18px; font-size:13px">Reclamar diagnóstico →</a><div class="qr-sim">📧</div></div><div style="margin-top:16px; font-size:11px; display:flex; justify-content:space-between"><span>✧ @nexoia_cali</span><span>✧ nexoia.cali@gmail.com</span></div></div><div class="flyer-card fade"><div class="flyer-badge">🚀 MÁS VENDIDO</div><div class="flyer-title">Contenido <span>automático</span><br>20 posts/mes</div><div class="flyer-desc">Diseños profesionales, captions con IA, publicación automática.</div><div class="flyer-offer">🎯 Incluye: historias, reels, respuesta a comentarios y reporte mensual.</div><div class="flyer-cta"><a id="flyer2-cta" href="#" class="btn-main" style="padding:8px 18px; font-size:13px">Quiero este plan →</a><div class="qr-sim">🤖</div></div><div style="margin-top:16px; font-size:11px; display:flex; justify-content:space-between"><span>📸 @nexoia_cali</span><span>⏳ 2 días de activación</span></div></div><div class="flyer-card fade"><div class="flyer-badge">📍 SOLO CALI</div><div class="flyer-title">Emprende <span>visible</span><br>Desde $0 de inversión</div><div class="flyer-desc">Primer mes con 30% de descuento para nuevos negocios en Cali, Yumbo, Jamundí o Palmira.</div><div class="flyer-offer">🎁 Bonos: optimización de Google Business + kit de 10 plantillas Canva.</div><div class="flyer-cta"><a id="flyer3-cta" href="#" class="btn-main" style="padding:8px 18px; font-size:13px">Aprovechar descuento →</a><div class="qr-sim">💚</div></div><div style="margin-top:16px; font-size:11px; display:flex; justify-content:space-between"><span>✧ Cupos limitados</span><span>✧ @nexoia_cali</span></div></div></div></div></section>
 
-        Datos de la marca:
-        - Nombre: NexoIA
-        - Instagram: @nexoia_cali
-        - Correo: nexoia.cali@gmail.com
-        - Servicios: Gestión de contenido con IA (20+ posts/mes), optimización de visibilidad digital, auditoría de impacto.
-        - Público: dueños de restaurantes, peluquerías, tiendas, consultorios, emprendedores en Cali.
+<!-- FAQ -->
+<section id="faq" class="section z1"><div class="container"><div class="eyebrow">Preguntas frecuentes</div><h2>Lo que siempre <em>nos preguntan.</em></h2><div class="faq-grid"><div><div class="faq-list"><div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">¿Necesito saber de tecnología?<span class="faq-icon">+</span></button><div class="faq-a"><p>No. Nosotros hacemos todo lo técnico. Tú solo mandas fotos y nos cuentas tu negocio.</p></div></div><div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">¿Qué necesito darles para empezar?<span class="faq-icon">+</span></button><div class="faq-a"><p>Fotos de tu negocio, información de servicios y acceso a tus redes.</p></div></div><div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">¿Cuánto tiempo tarda en verse resultado?<span class="faq-icon">+</span></button><div class="faq-a"><p>En el primer mes ya tienes más presencia. En 2-3 meses empiezas a ver clientes que llegan por redes.</p></div></div></div></div><div><div class="faq-list"><div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">¿Manejan WhatsApp Business?<span class="faq-icon">+</span></button><div class="faq-a"><p>Todavía no. Estamos completando la integración con API oficial. Próximamente.</p></div></div><div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">¿El contenido suena genérico?<span class="faq-icon">+</span></button><div class="faq-a"><p>No. Definimos el tono contigo. El contenido suena como tu negocio, no como una agencia.</p></div></div><div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">¿Tienen contrato fijo?<span class="faq-icon">+</span></button><div class="faq-a"><p>No. Trabajamos mes a mes. Puedes parar cuando quieras sin problema.</p></div></div></div></div></div></div></section>
 
-        Cada flyer debe:
-        - Ser vertical (formato historia o post 4:5)
-        - Tener fondo oscuro con acentos en verde neón (#4DBA87)
-        - Incluir título llamativo, 3 beneficios clave, un call-to-action claro y el handle de Instagram.
-        - Ser apto para imprimir o compartir en redes.
+<!-- CTA FINAL -->
+<section class="cta-sec z1"><div class="container"><div class="cta-inner"><div class="eyebrow">¿Listo para empezar?</div><h2>Un diagnóstico.<br><em>Sin costo.</em> Sin rodeos.</h2><p class="lead lead-c">Cuéntanos de tu negocio por correo y te respondemos con un análisis de tu situación digital actual.</p><div class="btn-row" style="justify-content:center"><a id="cta-final" href="#" class="btn-main">Solicitar Diagnóstico Digital</a><a href="#flyers" class="btn-ghost">Ver flyers →</a></div><div class="contact-row"><div class="cc"><div class="cc-l">Correo</div><div class="cc-v"><a id="cc-email" href="#"></a></div></div><div class="cc"><div class="cc-l">Instagram</div><div class="cc-v"><a href="https://instagram.com/nexoia_cali" target="_blank" class="ig-link">📸 @nexoia_cali</a></div></div><div class="cc"><div class="cc-l">Ciudad</div><div class="cc-v">Cali, Colombia</div></div></div></div></div></section>
 
-        Genera el diseño en formato HTML+CSS (responsive, listo para copiar) con tres variantes:
-        1. Flyer de "Diagnóstico Digital Gratuito"
-        2. Flyer de "Gestión de Contenido 20 posts/mes"
-        3. Flyer de "Descuento 30% para nuevos negocios en Cali"
-
-        Añade íconos, bordes sutiles y un efecto de brillo. Dame el código completo que pueda incrustar en una web."
-      </div>
-    </details>
-  </div>
-</div>
-</section>
-
-<!-- FAQ y CTA final (se mantienen) -->
-<section id="faq" class="section z1"><div class="container"><div class="eyebrow">Preguntas frecuentes</div><h2>Lo que siempre <em>nos preguntan.</em></h2><div class="faq-grid"><div><div class="faq-list"><div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">¿Necesito saber de tecnología?<span class="faq-icon">+</span></button><div class="faq-a"><p>No. Nosotros hacemos todo lo técnico.</p></div></div><div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">¿Qué necesito darles?<span class="faq-icon">+</span></button><div class="faq-a"><p>Fotos de tu negocio, información de servicios y acceso a tus redes.</p></div></div></div></div><div><div class="faq-list"><div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">¿Manejan WhatsApp?<span class="faq-icon">+</span></button><div class="faq-a"><p>Próximamente con API oficial.</p></div></div><div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">¿Tienen contrato fijo?<span class="faq-icon">+</span></button><div class="faq-a"><p>No, mes a mes sin permanencia.</p></div></div></div></div></div></div></section>
-
-<section class="cta-sec z1"><div class="container"><div class="cta-inner"><div class="eyebrow">¿Listo para empezar?</div><h2>Un diagnóstico.<br><em>Sin costo.</em> Sin rodeos.</h2><div class="btn-row" style="justify-content:center"><a id="cta-final" href="#" class="btn-main">Solicitar Diagnóstico Digital</a><a href="#flyers" class="btn-ghost">Ver flyers →</a></div><div class="contact-row"><div class="cc"><div class="cc-l">Correo</div><div class="cc-v"><a id="cc-email" href="#"></a></div></div><div class="cc"><div class="cc-l">Instagram</div><div class="cc-v"><a href="https://instagram.com/nexoia_cali" target="_blank" class="ig-link">📸 @nexoia_cali</a></div></div><div class="cc"><div class="cc-l">Ciudad</div><div class="cc-v">Cali, Colombia</div></div></div></div></div></section>
-
-<footer><div class="ft"><div class="ft-top"><div class="footer-brand"><div class="fb-logo">Nexo<span>IA</span></div><p>Automatización con IA para negocios locales en Cali.</p><div style="margin-top:12px"><a href="https://instagram.com/nexoia_cali" target="_blank" style="color:var(--green);">📸 Instagram: @nexoia_cali</a></div></div>
-<div class="ft-col"><h4>Servicios</h4><ul><li><a href="#servicios">Gestión de contenido</a></li><li><a href="#servicios">Optimización digital</a></li><li><a href="#diagnostico">Diagnóstico inicial</a></li></ul></div>
-<div class="ft-col"><h4>Recursos</h4><ul><li><a href="#flyers">Flyers promocionales</a></li><li><a href="#faq">Preguntas frecuentes</a></li><li><a href="#proceso">Cómo trabajamos</a></li></ul></div>
-<div class="ft-col"><h4>Contacto</h4><ul><li><a id="ft-email" href="#"></a></li><li><a href="https://instagram.com/nexoia_cali" target="_blank">@nexoia_cali</a></li><li><span id="ft-horario"></span></li></ul></div></div>
-<div class="ft-bot"><p>© 2026 NexoIA · <span id="ft-ciudad"></span> · Colombia</p><p>Fundado por <strong id="ft-fundador"></strong> · Síguenos en Instagram</p></div></div></footer>
+<!-- FOOTER -->
+<footer><div class="ft"><div class="ft-top"><div class="footer-brand"><div class="fb-logo">Nexo<span>IA</span></div><p>Automatización con IA para negocios locales en Cali.</p><div style="margin-top:12px"><a href="https://instagram.com/nexoia_cali" target="_blank" style="color:var(--green);">📸 Instagram: @nexoia_cali</a></div></div><div class="ft-col"><h4>Servicios</h4><ul><li><a href="#servicios">Gestión de contenido</a></li><li><a href="#servicios">Optimización digital</a></li><li><a href="#diagnostico">Diagnóstico inicial</a></li></ul></div><div class="ft-col"><h4>Recursos</h4><ul><li><a href="#flyers">Flyers promocionales</a></li><li><a href="#faq">Preguntas frecuentes</a></li><li><a href="#proceso">Cómo trabajamos</a></li></ul></div><div class="ft-col"><h4>Contacto</h4><ul><li><a id="ft-email" href="#"></a></li><li><a href="https://instagram.com/nexoia_cali" target="_blank">@nexoia_cali</a></li><li><span id="ft-horario"></span></li></ul></div></div><div class="ft-bot"><p>© 2026 NexoIA · <span id="ft-ciudad"></span> · Colombia</p><p>Fundado por <strong id="ft-fundador"></strong> · Síguenos en Instagram</p></div></div></footer>
 
 <script>
 const NEXOIA = { email: "nexoia.cali@gmail.com", fundador: "Santiago Restrepo Vélez", ciudad: "Cali, Valle del Cauca", horario: "Lun–Vie 8am–7pm · Sáb 9am–1pm", asunto_cta: "Solicitud de Diagnóstico Digital - NexoIA", asunto_redes: "Solicitud de Diagnóstico de Redes - NexoIA", asunto_audit: "Solicitud de Auditoría de Impacto - NexoIA" };
