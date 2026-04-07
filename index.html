@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NexoIA — Automatización con IA para negocios en Cali, Colombia</title>
+<meta name="description" content="Transformamos negocios locales en Cali con inteligencia artificial. Gestión de contenido, optimización digital y auditoría de impacto para emprendimientos y empresas de servicios.">
+<meta name="keywords" content="automatización IA Cali, marketing digital Colombia, gestión redes sociales Cali, NexoIA, agencia IA Colombia, negocios locales Cali">
+<meta property="og:title" content="NexoIA — Automatización con IA · Cali, Colombia">
+<meta property="og:description" content="Tu negocio en redes, en automático. Diagnóstico digital gratuito para negocios en Cali.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ── RESET ─────────────────────────────────────────────── */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+
+/* ── TOKENS ─────────────────────────────────────────────── */
+:root{
+  --bg:        #06100A;
+  --bg2:       #09160D;
+  --bg3:       #0D1F13;
+  --surface:   #112218;
+  --surface2:  #1A3028;
+  --border:    rgba(77,186,135,0.09);
+  --border2:   rgba(77,186,135,0.20);
+  --border3:   rgba(77,186,135,0.40);
+  --green:     #4DBA87;
+  --green2:    #2E9E67;
+  --green3:    #1A7A4A;
+  --greenlt:   #A8F0C8;
+  --white:     #EFF9F4;
+  --white2:    #B8D8C5;
+  --muted:     #5E8870;
+  --amber:     #E8A838;
+  --fs: 'Fraunces', Georgia, serif;
+  --fb: 'DM Sans', sans-serif;
+  --fm: 'DM Mono', monospace;
+}
+
+/* ── BASE ───────────────────────────────────────────────── */
+body{font-family:var(--fb);background:var(--bg);color:var(--white);overflow-x:hidden;line-height:1.65}
+::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:var(--bg2)}::-webkit-scrollbar-thumb{background:var(--green3);border-radius:4px}
+::selection{background:rgba(77,186,135,.22);color:var(--white)}
+.z1{position:relative;z-index:1}
+.container{max-width:1140px;margin:0 auto;padding:0 36px;position:relative;z-index:1}
+
+/* grain bg */
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:radial-gradient(ellipse 75% 55% at -5% 5%,rgba(30,120,70,.07) 0%,transparent 55%),
+             radial-gradient(ellipse 55% 45% at 105% 95%,rgba(77,186,135,.05) 0%,transparent 50%)}
+body::after{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.22;
+  background-image:radial-gradient(rgba(77,186,135,.18) 1px,transparent 1px);background-size:28px 28px}
+
+/* ── TOPBAR ─────────────────────────────────────────────── */
+.topbar{background:var(--green);padding:9px 36px;display:flex;align-items:center;justify-content:center;gap:10px;
+  font-size:13px;font-weight:500;color:var(--bg);position:relative;z-index:200}
+.topbar a{color:var(--bg);font-weight:700;text-decoration:underline}
+
+/* ── NAV ────────────────────────────────────────────────── */
+nav{position:sticky;top:0;z-index:100;background:rgba(6,16,10,.92);backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);padding:0 36px}
+.nav-inner{max-width:1140px;margin:0 auto;height:66px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.nav-logo{display:flex;align-items:center;gap:11px}
+.nav-logo-icon{width:34px;height:34px;background:var(--green);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.nav-brand{font-family:var(--fs);font-size:21px;font-weight:700;color:var(--white);letter-spacing:-.5px}
+.nav-brand span{color:var(--green)}
+.nav-links{display:flex;align-items:center;gap:2px;list-style:none}
+.nav-links a{font-size:13.5px;color:var(--muted);padding:7px 14px;border-radius:7px;transition:color .18s,background .18s}
+.nav-links a:hover{color:var(--white);background:rgba(77,186,135,.08)}
+.nav-cta{background:var(--green)!important;color:var(--bg)!important;font-weight:600!important}
+.nav-cta:hover{background:#6DCFA0!important}
+.ham{display:none;background:none;border:none;padding:4px;flex-direction:column;gap:5px}
+.ham span{display:block;width:22px;height:2px;background:var(--white2);border-radius:2px}
+
+/* ── TYPOGRAPHY ─────────────────────────────────────────── */
+h1{font-family:var(--fs);font-size:clamp(40px,5.5vw,66px);font-weight:400;line-height:1.06;letter-spacing:-2.5px;color:var(--white);margin-bottom:22px}
+h1 em{font-style:italic;color:var(--green)}
+h2{font-family:var(--fs);font-size:clamp(28px,3.8vw,46px);font-weight:400;letter-spacing:-1.5px;color:var(--white);line-height:1.1;margin-bottom:16px}
+h2 em{font-style:italic;color:var(--green)}
+h3{font-family:var(--fs);font-size:clamp(20px,2.4vw,27px);font-weight:400;color:var(--white);letter-spacing:-.8px;margin-bottom:10px}
+h4{font-family:var(--fs);font-size:18px;font-weight:500;color:var(--white);margin-bottom:8px}
+.eyebrow{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--green);font-weight:600;margin-bottom:12px;font-family:var(--fm)}
+.lead{font-size:16.5px;color:var(--white2);line-height:1.78;font-weight:300;max-width:560px}
+.lead-c{max-width:680px;text-align:center;margin:0 auto}
+
+/* ── BUTTONS ────────────────────────────────────────────── */
+.btn-main{display:inline-flex;align-items:center;gap:9px;background:var(--green);color:var(--bg);padding:14px 28px;border-radius:9px;
+  font-size:15px;font-weight:600;text-decoration:none;transition:all .2s;border:none;white-space:nowrap}
+.btn-main:hover{background:#6DCFA0;transform:translateY(-1px)}
+.btn-main svg{flex-shrink:0}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--white2);padding:14px 28px;
+  border-radius:9px;font-size:15px;text-decoration:none;border:1px solid var(--border2);transition:all .2s;white-space:nowrap}
+.btn-ghost:hover{border-color:var(--green);color:var(--green)}
+.btn-row{display:flex;gap:12px;flex-wrap:wrap}
+
+/* ── ANIMATIONS ─────────────────────────────────────────── */
+@keyframes blink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.65)}}
+@keyframes spin{to{transform:translate(-50%,-50%) rotate(360deg)}}
+@keyframes satpulse{0%,100%{opacity:.7}50%{opacity:1}}
+@keyframes fadeup{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.fade{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.fade.vis{opacity:1;transform:none}
+
+/* ══════════════════════════════════════════════════════════
+   HERO
+══════════════════════════════════════════════════════════ */
+#hero{min-height:100vh;display:flex;align-items:center}
+.hero-wrap{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;padding:80px 0}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(77,186,135,.08);
+  border:1px solid var(--border2);border-radius:20px;padding:6px 16px 6px 8px;
+  font-size:12px;color:var(--green);font-weight:500;margin-bottom:26px;letter-spacing:.5px;font-family:var(--fm)}
+.hero-dot{width:8px;height:8px;background:var(--green);border-radius:50%;animation:blink 2.2s ease infinite}
+.hero-proof{display:flex;gap:32px;margin-top:48px;padding-top:40px;border-top:1px solid var(--border)}
+.proof-stat .n{font-family:var(--fs);font-size:30px;font-weight:600;color:var(--white);letter-spacing:-1px;line-height:1}
+.proof-stat .n em{color:var(--green);font-style:normal}
+.proof-stat .l{font-size:12px;color:var(--muted);margin-top:4px;line-height:1.4}
+
+/* Hero Orbit Viz */
+.hero-viz{position:relative;height:460px;display:flex;align-items:center;justify-content:center}
+.orbit{position:absolute;width:340px;height:340px;border-radius:50%;border:1px dashed rgba(77,186,135,.14);
+  top:50%;left:50%;transform:translate(-50%,-50%);animation:spin 32s linear infinite}
+.orbit2{width:215px;height:215px;animation:spin 22s linear reverse infinite;border-color:rgba(77,186,135,.07)}
+.viz-center{position:absolute;width:152px;height:152px;border-radius:50%;border:1.5px solid var(--green3);
+  background:var(--bg3);display:flex;flex-direction:column;align-items:center;justify-content:center;
+  top:50%;left:50%;transform:translate(-50%,-50%);z-index:5}
+.vc-lbl{font-size:10px;letter-spacing:3px;color:var(--green);text-transform:uppercase;margin-bottom:5px;font-family:var(--fm)}
+.vc-ico{font-family:var(--fs);font-size:30px;font-weight:700;color:var(--white)}
+.sat{position:absolute;background:var(--surface2);border:1px solid var(--border2);border-radius:12px;padding:11px 15px;
+  font-size:12px;color:var(--white2);display:flex;flex-direction:column;align-items:center;gap:5px;animation:satpulse 3s ease infinite}
+.sat em{font-size:19px;font-style:normal}.sat span{font-size:10.5px;color:var(--muted)}
+.sat.s1{top:22px;left:50%;transform:translateX(-50%);animation-delay:0s}
+.sat.s2{top:50%;right:14px;transform:translateY(-50%);animation-delay:.7s}
+.sat.s3{bottom:22px;right:74px;animation-delay:1.4s}
+.sat.s4{bottom:22px;left:74px;animation-delay:2.1s}
+.sat.s5{top:50%;left:14px;transform:translateY(-50%);animation-delay:2.8s}
+
+/* ── SECTOR STRIP ───────────────────────────────────────── */
+.sector-strip{border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  padding:28px 0;background:var(--bg2)}
+.sector-inner{display:flex;align-items:center;gap:28px;flex-wrap:wrap;justify-content:center}
+.sector-label{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);white-space:nowrap;font-family:var(--fm)}
+.pills{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.pill{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:7px 15px;
+  font-size:13px;color:var(--white2);transition:all .2s;cursor:default}
+.pill:hover{border-color:var(--border3);color:var(--green)}
+
+/* ══════════════════════════════════════════════════════════
+   SHARED SECTION STYLES
+══════════════════════════════════════════════════════════ */
+.section{padding:96px 0}
+.section-sm{padding:72px 0}
+.section + .section{border-top:1px solid var(--border)}
+.section-center{text-align:center}
+.section-center .lead{margin:0 auto}
+blockquote{border-left:3px solid var(--green3);padding:18px 24px;background:var(--surface);border-radius:0 10px 10px 0;margin-top:28px}
+blockquote p{font-family:var(--fs);font-size:16px;font-style:italic;color:var(--white2);line-height:1.7;margin-bottom:8px}
+blockquote cite{font-size:12px;color:var(--muted);font-family:var(--fm)}
+
+/* ══════════════════════════════════════════════════════════
+   SERVICIOS — 3 tarjetas grandes
+══════════════════════════════════════════════════════════ */
+.srv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:48px}
+.srv-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:32px 28px;
+  display:flex;flex-direction:column;transition:border-color .25s,transform .25s;position:relative;overflow:hidden}
+.srv-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--green3);
+  transform:scaleX(0);transform-origin:left;transition:transform .35s ease}
+.srv-card:hover{border-color:var(--border2);transform:translateY(-4px)}
+.srv-card:hover::before{transform:scaleX(1)}
+.srv-ico{width:48px;height:48px;background:rgba(77,186,135,.1);border:1px solid var(--border2);
+  border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:20px}
+.srv-card h3{font-size:20px;margin-bottom:10px}
+.srv-card p{font-size:14px;color:var(--muted);line-height:1.75;flex:1;margin-bottom:20px}
+.srv-tag{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;color:var(--green);
+  background:rgba(77,186,135,.08);padding:4px 12px;border-radius:20px;font-family:var(--fm);letter-spacing:.3px}
+.srv-tag svg{flex-shrink:0}
+.srv-items{list-style:none;display:flex;flex-direction:column;gap:9px;margin:16px 0 20px}
+.srv-items li{font-size:13.5px;color:var(--white2);display:flex;align-items:flex-start;gap:9px;line-height:1.5}
+.srv-items li::before{content:'→';color:var(--green);flex-shrink:0;margin-top:1px}
+
+/* ══════════════════════════════════════════════════════════
+   PROCESO — 3 pasos (heading levels fixed)
+══════════════════════════════════════════════════════════ */
+.proc-wrap{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;margin-top:48px}
+.proc-steps{display:flex;flex-direction:column;gap:0}
+.proc-step{display:flex;gap:20px;padding:26px 0;border-bottom:1px solid var(--border);position:relative}
+.proc-step:last-child{border-bottom:none}
+.proc-step::after{content:'';position:absolute;left:15px;bottom:-1px;top:58px;width:1px;
+  background:linear-gradient(to bottom,var(--green3),transparent)}
+.proc-step:last-child::after{display:none}
+.proc-n{font-family:var(--fm);font-size:11px;color:var(--green);background:rgba(77,186,135,.1);
+  border:1px solid var(--border2);width:32px;height:32px;border-radius:8px;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.proc-step h3{font-size:16px;font-weight:500;color:var(--white);margin-bottom:5px;font-family:var(--fs);font-style:italic}
+.proc-step p{font-size:13.5px;color:var(--muted);line-height:1.7}
+.proc-step .proc-badge{display:inline-block;margin-top:8px;font-size:11px;color:var(--amber);
+  background:rgba(232,168,56,.1);padding:3px 10px;border-radius:20px;font-family:var(--fm)}
+
+/* Right panel - stack of tools */
+.tool-panel{background:var(--surface);border:1px solid var(--border2);border-radius:18px;padding:28px}
+.tp-head{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:22px;font-family:var(--fm)}
+.tool-item{display:flex;align-items:center;gap:13px;background:var(--bg2);border:1px solid var(--border);
+  border-radius:10px;padding:13px 16px;margin-bottom:8px;transition:border-color .2s}
+.tool-item:hover{border-color:var(--border2)}
+.ticon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
+.t-name{font-size:13.5px;font-weight:500;color:var(--white)}
+.t-desc{font-size:11.5px;color:var(--muted);margin-top:1px}
+.tool-conn{display:flex;justify-content:center;padding:2px 0}
+.tool-conn span{font-size:13px;color:var(--border3)}
+.tp-note{margin-top:18px;padding:12px 16px;background:rgba(77,186,135,.06);border-radius:8px;
+  border:1px solid var(--border);font-size:12.5px;color:var(--white2);line-height:1.6}
+.tp-note strong{color:var(--green)}
+
+/* ══════════════════════════════════════════════════════════
+   SECTORES (headings fixed)
+══════════════════════════════════════════════════════════ */
+.sec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:40px}
+.sec-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px;
+  transition:all .25s;cursor:default}
+.sec-card:hover{border-color:var(--border3);transform:translateY(-3px)}
+.sec-card .sico{font-size:26px;margin-bottom:13px;display:block}
+.sec-card h3{font-size:15px;font-weight:500;color:var(--white);margin-bottom:7px}
+.sec-card p{font-size:13px;color:var(--muted);line-height:1.7}
+.sec-card .stag{display:inline-block;margin-top:10px;font-size:11px;color:var(--green);
+  background:rgba(77,186,135,.08);padding:3px 10px;border-radius:20px}
+
+/* ══════════════════════════════════════════════════════════
+   DIAGNÓSTICO / AUDITORÍA
+══════════════════════════════════════════════════════════ */
+.diag-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:44px}
+.diag-card{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:32px 26px;
+  display:flex;flex-direction:column;position:relative;transition:border-color .2s}
+.diag-card:hover{border-color:var(--border2)}
+.diag-card.featured{border-color:var(--green3);background:var(--surface)}
+.diag-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--green);color:var(--bg);
+  font-size:11px;font-weight:700;padding:4px 16px;border-radius:20px;white-space:nowrap;letter-spacing:.5px;font-family:var(--fm)}
+.diag-plan{font-family:var(--fm);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.diag-name{font-family:var(--fs);font-size:22px;font-weight:400;color:var(--white);margin-bottom:6px}
+.diag-sub{font-size:13px;color:var(--muted);margin-bottom:20px;line-height:1.5}
+.diag-div{height:1px;background:var(--border);margin:16px 0}
+.diag-feats{list-style:none;display:flex;flex-direction:column;gap:9px;flex:1;margin-bottom:24px}
+.diag-feats li{font-size:13.5px;color:var(--white2);display:flex;align-items:flex-start;gap:9px;line-height:1.5}
+.diag-feats li.off{color:var(--muted)}
+.ck{color:var(--green);flex-shrink:0}.dk{color:var(--border3);flex-shrink:0}
+.diag-btn{display:block;text-align:center;padding:13px;border-radius:9px;font-size:14px;font-weight:500;
+  border:1px solid var(--border2);color:var(--white2);transition:all .2s;cursor:pointer;background:transparent;font-family:var(--fb)}
+.diag-btn:hover{border-color:var(--green);color:var(--green)}
+.diag-btn.feat{background:var(--green);color:var(--bg);border-color:var(--green)}
+.diag-btn.feat:hover{background:#6DCFA0}
+.diag-note{text-align:center;margin-top:20px;font-size:13px;color:var(--muted)}
+.diag-note strong{color:var(--white2)}
+
+/* ══════════════════════════════════════════════════════════
+   FAQ
+══════════════════════════════════════════════════════════ */
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 64px;margin-top:36px}
+.faq-list{display:flex;flex-direction:column}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-item:first-child{border-top:1px solid var(--border)}
+.faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;
+  padding:18px 0;background:none;border:none;color:var(--white);font-size:15px;text-align:left;
+  cursor:pointer;transition:color .2s;font-family:var(--fb)}
+.faq-q:hover{color:var(--green)}
+.faq-icon{font-size:20px;color:var(--green3);transition:transform .25s;flex-shrink:0}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .25s}
+.faq-a p{font-size:14px;color:var(--muted);line-height:1.8;padding-bottom:18px}
+.faq-item.open .faq-icon{transform:rotate(45deg)}
+.faq-item.open .faq-a{max-height:300px}
+
+/* ══════════════════════════════════════════════════════════
+   CTA SECTION
+══════════════════════════════════════════════════════════ */
+.cta-sec{padding:96px 0;background:var(--bg2);border-top:1px solid var(--border)}
+.cta-inner{max-width:680px;margin:0 auto;text-align:center}
+.cta-inner h2{margin-bottom:18px}
+.cta-inner .lead{margin:0 auto 38px}
+.contact-row{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:40px}
+.cc{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 20px;text-align:left}
+.cc-l{font-size:11px;color:var(--muted);font-family:var(--fm);letter-spacing:.5px;margin-bottom:4px}
+.cc-v{font-size:14px;color:var(--white2);font-weight:500}
+.cc-v a{color:var(--green);transition:opacity .2s}.cc-v a:hover{opacity:.75}
+
+/* ══════════════════════════════════════════════════════════
+   FOOTER (headings fixed)
+══════════════════════════════════════════════════════════ */
+footer{border-top:1px solid var(--border);position:relative;z-index:1}
+.ft{max-width:1140px;margin:0 auto;padding:0 36px}
+.ft-top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:48px;padding:60px 0 48px}
+.footer-brand .fb-logo{font-family:var(--fs);font-size:24px;font-weight:700;color:var(--white);margin-bottom:14px;letter-spacing:-.5px}
+.footer-brand .fb-logo span{color:var(--green)}
+.footer-brand p{font-size:13.5px;color:var(--muted);line-height:1.75;max-width:280px}
+.ft-col h4{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);font-family:var(--fm);margin-bottom:16px}
+.ft-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.ft-col ul a{font-size:13.5px;color:var(--white2);transition:color .2s}
+.ft-col ul a:hover{color:var(--green)}
+.ft-bot{border-top:1px solid var(--border);padding:22px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.ft-bot p{font-size:12.5px;color:var(--muted)}
+.ft-bot strong{color:var(--white2)}
+.wa-soon{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);
+  background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:5px 12px;font-family:var(--fm)}
+.wa-soon span{color:var(--amber)}
+
+/* ── RESPONSIVE ─────────────────────────────────────────── */
+@media(max-width:900px){
+  .hero-wrap{grid-template-columns:1fr;gap:40px;padding:60px 0}
+  .hero-viz{display:none}
+  .srv-grid,.sec-grid,.diag-grid{grid-template-columns:1fr}
+  .proc-wrap{grid-template-columns:1fr;gap:36px}
+  .faq-grid{grid-template-columns:1fr}
+  .ft-top{grid-template-columns:1fr 1fr;gap:32px}
+  .nav-links{display:none}.ham{display:flex}
+  .container{padding:0 20px}
+  nav{padding:0 20px}
+  .section{padding:64px 0}.section-sm{padding:52px 0}
+}
+@media(max-width:560px){
+  .hero-proof{flex-wrap:wrap;gap:22px}
+  .ft-top{grid-template-columns:1fr}
+  .btn-row{flex-direction:column}
+  .contact-row{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar z1">
+  ✦ Diagnóstico Digital para negocios en Cali — 
+  <a id="tb-link" href="#">Solicita el tuyo ahora</a>
+</div>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">
+      <div class="nav-logo-icon">
+        <svg width="19" height="19" viewBox="0 0 26 26" fill="none">
+          <circle cx="7" cy="13" r="3" fill="#06100A"/>
+          <circle cx="19" cy="7" r="3" fill="#06100A"/>
+          <circle cx="19" cy="19" r="3" fill="#06100A"/>
+          <line x1="7" y1="13" x2="19" y2="7" stroke="#06100A" stroke-width="2"/>
+          <line x1="7" y1="13" x2="19" y2="19" stroke="#06100A" stroke-width="2"/>
+          <line x1="19" y1="7" x2="19" y2="19" stroke="#06100A" stroke-width="2"/>
+        </svg>
+      </div>
+      <span class="nav-brand">Nexo<span>IA</span></span>
+    </a>
+    <ul class="nav-links" id="navlinks">
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#proceso">Cómo trabajamos</a></li>
+      <li><a href="#sectores">Sectores</a></li>
+      <li><a href="#diagnostico">Diagnóstico</a></li>
+      <li><a href="#faq">Preguntas</a></li>
+      <li><a id="nav-cta" href="#" class="nav-cta">Solicitar diagnóstico</a></li>
+    </ul>
+    <button class="ham" onclick="toggleNav()" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<section id="hero">
+<div class="container">
+<div class="hero-wrap">
+  <div class="z1">
+    <div class="hero-eyebrow"><div class="hero-dot"></div>Cali, Colombia · 2026</div>
+    <h1>Tus redes activas.<br>Tu contenido listo.<br><em>Sin que lo hagas tú.</em></h1>
+    <p class="lead" style="margin-bottom:36px">Gestionamos la presencia digital de negocios locales en Cali usando inteligencia artificial. Instagram, Facebook y TikTok activos, consistentes y profesionales — mientras tú te enfocas en lo que haces bien.</p>
+    <div class="btn-row">
+      <a id="cta-hero" href="#" class="btn-main"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>Solicitar Diagnóstico Digital</a>
+      <a href="#servicios" class="btn-ghost">Ver servicios →</a>
+    </div>
+    <div class="hero-proof">
+      <div class="proof-stat"><div class="n">20<em>+</em></div><div class="l">posts/mes<br>por cliente</div></div>
+      <div class="proof-stat"><div class="n">3<em>h</em></div><div class="l">que recuperas<br>cada semana</div></div>
+      <div class="proof-stat"><div class="n">100<em>%</em></div><div class="l">enfocado en<br>IA y resultados</div></div>
+    </div>
+  </div>
+  <div class="hero-viz z1">
+    <div class="orbit"></div><div class="orbit orbit2"></div>
+    <div class="viz-center"><div class="vc-lbl">NexoIA</div><div class="vc-ico">✦</div></div>
+    <div class="sat s1"><em>📸</em><span>Instagram</span></div>
+    <div class="sat s2"><em>🎵</em><span>TikTok</span></div>
+    <div class="sat s3"><em>💬</em><span>DMs</span></div>
+    <div class="sat s4"><em>📊</em><span>Reportes</span></div>
+    <div class="sat s5"><em>🤖</em><span>IA</span></div>
+  </div>
+</div>
+</div>
+</section>
+
+<div class="sector-strip z1"><div class="sector-inner"><span class="sector-label">Negocios que impulsamos</span><div class="pills"><span class="pill">Restaurantes</span><span class="pill">Peluquerías</span><span class="pill">Consultorios</span><span class="pill">Tiendas y boutiques</span><span class="pill">Academias</span><span class="pill">Inmobiliarias</span><span class="pill">Servicios técnicos</span><span class="pill">E-commerce</span><span class="pill">Emprendimientos</span></div></div></div>
+
+<section id="servicios" class="section z1"><div class="container"><div class="eyebrow">Lo que hacemos</div><h2>Tres servicios. <em>Un solo objetivo:</em><br>que tu negocio sea visible.</h2><p class="lead" style="margin-top:12px">No inventamos nada que no necesites. Atacamos los tres frentes que más impactan la presencia digital de un negocio local en Cali.</p>
+<div class="srv-grid">
+  <div class="srv-card fade"><div class="srv-ico">📱</div><h3>Gestión de contenido con IA</h3><p>Creamos, diseñamos y publicamos tu contenido en Instagram, Facebook y TikTok — usando inteligencia artificial para que sea consistente, profesional y que de verdad atraiga clientes.</p><ul class="srv-items"><li>20+ posts mensuales diseñados en Canva con IA</li><li>Captions escritos con tono y voz de tu marca</li><li>Historias y reels que muestran lo que haces</li><li>Publicación en horarios de mayor alcance</li><li>Respuesta a comentarios y mensajes directos</li></ul><div class="srv-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Instagram · Facebook · TikTok</div></div>
+  <div class="srv-card fade" style="transition-delay:.1s"><div class="srv-ico">🔍</div><h3>Optimización de visibilidad digital</h3><p>Tu negocio existe pero la gente no te encuentra. Optimizamos tu perfil digital para que aparezcas cuando alguien busca lo que ofreces en Cali — sin necesidad de pagar publicidad.</p><ul class="srv-items"><li>Optimización de bio y perfil en cada red</li><li>Hashtags estratégicos para Cali y Colombia</li><li>Google Business Profile actualizado y activo</li><li>Estrategia de palabras clave para tu sector</li><li>Análisis de competencia local</li></ul><div class="srv-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>Sin pautar · Alcance orgánico</div></div>
+  <div class="srv-card fade" style="transition-delay:.2s"><div class="srv-ico">🤖</div><h3>Auditoría de impacto IA</h3><p>Antes de hacer cualquier cosa, analizamos en profundidad tu situación digital actual. Identificamos exactamente qué está frenando tu crecimiento y te entregamos un plan claro y accionable.</p><ul class="srv-items"><li>Análisis completo de tus redes actuales</li><li>Diagnóstico de presencia vs. competencia</li><li>Identificación de oportunidades perdidas</li><li>Plan de acción personalizado con prioridades</li><li>Recomendaciones con impacto estimado</li></ul><div class="srv-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>Punto de partida recomendado</div></div>
+</div>
+<div style="margin-top:24px;background:var(--surface);border:1px solid var(--border2);border-radius:12px;padding:20px 24px;display:flex;align-items:flex-start;gap:14px"><div style="font-size:22px;flex-shrink:0;margin-top:2px">💬</div><div><p style="font-size:14px;font-weight:500;color:var(--white);margin-bottom:4px">Una nota honesta sobre WhatsApp Business</p><p style="font-size:13.5px;color:var(--muted);line-height:1.7">La integración de chatbots con WhatsApp requiere la API oficial de WhatsApp Business y una línea SIM dedicada. Estamos preparando esta funcionalidad para ofrecerla próximamente. Por ahora, nos enfocamos 100% en Instagram, Facebook, TikTok y la gestión de mensajes directos — donde ya entregamos resultados reales.</p></div></div>
+</div></section>
+
+<section id="proceso" class="section z1" style="background:var(--bg2)"><div class="container"><div class="eyebrow">Nuestro proceso</div><h2>Así trabajamos. <em>Sin complicaciones.</em></h2><p class="lead" style="margin-top:12px">No hay reuniones interminables ni contratos en letras pequeñas. Tres pasos claros y tu negocio ya está en marcha.</p>
+<div class="proc-wrap"><div class="proc-steps">
+  <div class="proc-step fade"><div class="proc-n">01</div><div><h3>Diagnóstico de impacto</h3><p>Analizamos tu situación digital actual: qué tienes, qué falta, qué está frenando tu crecimiento. Revisamos tus redes, tu presencia en Google y lo que hace tu competencia. Al final tienes un mapa claro de dónde estás y a dónde puedes llegar.</p><span class="proc-badge">→ Entrega: reporte con prioridades</span></div></div>
+  <div class="proc-step fade" style="transition-delay:.12s"><div class="proc-n">02</div><div><h3>Estrategia personalizada</h3><p>Con el diagnóstico en mano, diseñamos tu estrategia de contenido: qué publicar, cuándo, en qué plataformas y con qué tono. Nada genérico — todo adaptado a tu negocio, tu sector y tu público en Cali.</p><span class="proc-badge">→ Entrega: calendario de contenido</span></div></div>
+  <div class="proc-step fade" style="transition-delay:.24s"><div class="proc-n">03</div><div><h3>Ejecución con IA</h3><p>Producimos y publicamos tu contenido de forma consistente cada mes. Usamos IA para crear captions, diseñar piezas y optimizar el alcance. Tú recibes reportes mensuales con resultados reales: seguidores, alcance, interacciones.</p><span class="proc-badge">→ Entrega: 20+ posts + reporte mensual</span></div></div>
+</div>
+<div class="fade" style="transition-delay:.1s"><div class="tool-panel"><div class="tp-head">Herramientas que usamos</div>
+  <div class="tool-item"><div class="ticon" style="background:rgba(77,186,135,.12)">🤖</div><div><div class="t-name">Claude AI (Anthropic)</div><div class="t-desc">Redacción inteligente de captions y estrategia</div></div></div><div class="tool-conn"><span>↓</span></div>
+  <div class="tool-item"><div class="ticon" style="background:rgba(77,100,186,.12)">🎨</div><div><div class="t-name">Canva Pro + IA</div><div class="t-desc">Diseño de posts, stories y reels profesionales</div></div></div><div class="tool-conn"><span>↓</span></div>
+  <div class="tool-item"><div class="ticon" style="background:rgba(186,120,77,.12)">🎬</div><div><div class="t-name">CapCut IA</div><div class="t-desc">Edición de reels con subtítulos y efectos automáticos</div></div></div><div class="tool-conn"><span>↓</span></div>
+  <div class="tool-item"><div class="ticon" style="background:rgba(77,130,186,.12)">📅</div><div><div class="t-name">Meta Business Suite</div><div class="t-desc">Programación y análisis de Instagram y Facebook</div></div></div><div class="tool-conn"><span>↓</span></div>
+  <div class="tool-item"><div class="ticon" style="background:rgba(186,77,77,.12)">📊</div><div><div class="t-name">Google Business Profile</div><div class="t-desc">Visibilidad en búsquedas locales de Cali</div></div></div>
+  <div class="tp-note"><strong>Próximamente:</strong> Integración con WhatsApp Business API para atención automática 24/7 — en desarrollo.</div>
+</div></div></div></div></section>
+
+<section id="sectores" class="section z1"><div class="container"><div class="eyebrow">A quién ayudamos</div><h2>Para cualquier negocio en Cali<br>que quiera <em>crecer en digital.</em></h2><p class="lead" style="margin-top:12px">Si tienes clientes, un producto o servicio y ganas de tener más presencia — NexoIA puede ayudarte. No importa el sector.</p>
+<div class="sec-grid">
+  <div class="sec-card fade"><span class="sico">🍽️</span><h3>Restaurantes y comida</h3><p>Fotos de tus platos que dan hambre, menú visible online, reels que muestran el ambiente. Clientes que llegan diciendo "te vi en Instagram".</p><span class="stag">Instagram · TikTok · Google Maps</span></div>
+  <div class="sec-card fade" style="transition-delay:.08s"><span class="sico">✂️</span><h3>Peluquerías y salones</h3><p>Antes/después de tus trabajos, historias del día a día, promociones semanales. Tu portafolio digital que atrae nuevas clientas solas.</p><span class="stag">Instagram · Reels · Stories</span></div>
+  <div class="sec-card fade" style="transition-delay:.16s"><span class="sico">🏥</span><h3>Consultorios y salud</h3><p>Contenido educativo que genera confianza, tips de salud que se comparten, presencia profesional que convierte seguidores en pacientes.</p><span class="stag">Educación · Confianza · Alcance</span></div>
+  <div class="sec-card fade" style="transition-delay:.24s"><span class="sico">👗</span><h3>Tiendas y boutiques</h3><p>Catálogo visual atractivo, lanzamientos de nuevas colecciones, stories de "disponible ahora". Ventas desde Instagram sin esfuerzo tuyo.</p><span class="stag">Catálogo · DMs · TikTok Shop</span></div>
+  <div class="sec-card fade" style="transition-delay:.32s"><span class="sico">🏗️</span><h3>Servicios técnicos</h3><p>Talleres, plomería, electricidad, refrigeración. Antes/después de tus trabajos, testimonios de clientes, credibilidad que genera nuevos contratos.</p><span class="stag">Credibilidad · Google · Facebook</span></div>
+  <div class="sec-card fade" style="transition-delay:.40s"><span class="sico">🚀</span><h3>Emprendimientos en Cali</h3><p>Estás arrancando y necesitas presencia desde el día uno. Te ayudamos a construir una marca digital seria sin que tengas que saber de marketing.</p><span class="stag">Desde cero · Todas las redes</span></div>
+</div></div></section>
+
+<section id="diagnostico" class="section z1" style="background:var(--bg2)"><div class="container"><div class="eyebrow">Por dónde empezar</div><h2>Elige tu <em>punto de entrada.</em></h2><p class="lead" style="margin-top:12px">No hay una sola forma de trabajar con NexoIA. Elige el punto que más se adapta a tu momento actual.</p>
+<div class="diag-grid">
+  <div class="diag-card fade"><div class="diag-plan">Punto de partida</div><div class="diag-name">Diagnóstico Digital</div><div class="diag-sub">Antes de cualquier cosa, conoce exactamente en qué estado está tu presencia digital y qué debes priorizar.</div><div class="diag-div"></div><ul class="diag-feats"><li><span class="ck">✓</span> Análisis de tus redes sociales actuales</li><li><span class="ck">✓</span> Revisión de presencia en Google</li><li><span class="ck">✓</span> Análisis de competencia local</li><li><span class="ck">✓</span> Reporte con prioridades concretas</li><li><span class="dk">–</span><span style="color:var(--muted)">No incluye producción de contenido</span></li><li><span class="dk">–</span><span style="color:var(--muted)">No incluye gestión de redes</span></li></ul><a id="btn-diag1" href="#" class="diag-btn">Solicitar diagnóstico</a></div>
+  <div class="diag-card featured fade" style="transition-delay:.1s"><div class="diag-badge">Más solicitado</div><div class="diag-plan">Servicio mensual</div><div class="diag-name">Gestión de Contenido</div><div class="diag-sub">Todo listo, consistente y profesional. Tú das las fotos y la información. Nosotros hacemos todo lo demás.</div><div class="diag-div"></div><ul class="diag-feats"><li><span class="ck">✓</span> Diagnóstico inicial incluido</li><li><span class="ck">✓</span> 20 posts/mes diseñados y publicados</li><li><span class="ck">✓</span> Historias y reels con IA</li><li><span class="ck">✓</span> Gestión de comentarios y DMs</li><li><span class="ck">✓</span> Reporte mensual de resultados</li><li><span class="ck">✓</span> Ajustes según lo que funcione</li></ul><a id="btn-diag2" href="#" class="diag-btn feat">Solicitar diagnóstico</a></div>
+  <div class="diag-card fade" style="transition-delay:.2s"><div class="diag-plan">Nivel avanzado</div><div class="diag-name">Auditoría + Estrategia</div><div class="diag-sub">Para negocios que ya tienen presencia pero no están creciendo como deberían. Vamos al fondo del problema.</div><div class="diag-div"></div><ul class="diag-feats"><li><span class="ck">✓</span> Auditoría de impacto completa</li><li><span class="ck">✓</span> Estrategia de contenido 3 meses</li><li><span class="ck">✓</span> Análisis de audiencias y métricas</li><li><span class="ck">✓</span> Identificación de oportunidades perdidas</li><li><span class="ck">✓</span> Plan de acción priorizado</li><li><span class="ck">✓</span> Sesión de revisión incluida</li></ul><a id="btn-diag3" href="#" class="diag-btn">Solicitar diagnóstico</a></div>
+</div><p class="diag-note">Todos empiezan con el mismo paso: <strong>escríbenos y cuéntanos tu negocio.</strong> No hay formularios complicados.</p></div></section>
+
+<section id="faq" class="section z1"><div class="container"><div class="eyebrow">Preguntas frecuentes</div><h2>Lo que siempre <em>nos preguntan.</em></h2>
+<div class="faq-grid"><div><div class="faq-list">
+  <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">¿Necesito saber de tecnología para trabajar con NexoIA?<span class="faq-icon">+</span></button><div class="faq-a"><p>Para nada. Nosotros hacemos todo lo técnico. Tú solo nos mandas las fotos de tu negocio y nos cuentas qué ofreces. Al final tienes redes activas y profesionales sin haber tocado una sola herramienta.</p></div></div>
+  <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">¿Qué necesito darles para que empiecen?<span class="faq-icon">+</span></button><div class="faq-a"><p>Básicamente: fotos de tu negocio (con el celular está bien), información de tus servicios o productos, acceso a tu Instagram o Facebook para publicar, y 15 minutos a la semana para revisar el contenido antes de que suba.</p></div></div>
+  <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">¿Cuánto tiempo tarda en verse algún resultado?<span class="faq-icon">+</span></button><div class="faq-a"><p>Las redes son un juego de consistencia, no de magia inmediata. En el primer mes ya tienes más presencia y alcance que antes. En 2 a 3 meses con contenido constante empiezas a ver clientes que llegan diciendo "te vi en Instagram". Los resultados crecen con el tiempo.</p></div></div>
+  <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">¿Tienen contrato fijo o puedo parar cuando quiera?<span class="faq-icon">+</span></button><div class="faq-a"><p>No hay contrato a largo plazo. Trabajamos mes a mes. Si en algún momento sientes que no es para ti, lo detienes sin ningún problema. Nuestro objetivo es que quieras seguir porque ves resultados, no porque firmaste un papel.</p></div></div>
+</div></div><div><div class="faq-list">
+  <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">¿Manejan WhatsApp Business también?<span class="faq-icon">+</span></button><div class="faq-a"><p>Todavía no — y lo decimos con honestidad. La integración de WhatsApp Business API requiere una línea SIM dedicada y un proceso de verificación que estamos completando. Por ahora gestionamos Instagram, Facebook, TikTok y los mensajes directos de esas plataformas. WhatsApp llegará pronto.</p></div></div>
+  <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">¿El contenido suena genérico o realmente parece de mi negocio?<span class="faq-icon">+</span></button><div class="faq-a"><p>Esa es exactamente la diferencia. Usamos IA para producir más rápido, pero el tono, el estilo y la voz los definimos contigo en el diagnóstico inicial. El contenido suena como tu negocio — no como cualquier agencia.</p></div></div>
+  <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">¿Puedo empezar con solo una red social?<span class="faq-icon">+</span></button><div class="faq-a"><p>Claro. De hecho, muchas veces lo recomendamos. Si tu público está en Instagram, empezamos por ahí y lo hacemos bien. Cuando eso funcione, expandimos. No tiene sentido estar en todas partes a medias.</p></div></div>
+  <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">¿Están registrados como empresa en Colombia?<span class="faq-icon">+</span></button><div class="faq-a"><p>Estamos en proceso de formalización como persona natural con RUT en la DIAN — el paso correcto para emprendimientos en Colombia. Operamos con total transparencia y puedes pedir comprobantes de cualquier transacción.</p></div></div>
+</div></div></div></div></section>
+
+<section class="cta-sec z1"><div class="container"><div class="cta-inner"><div class="eyebrow" style="text-align:center">¿Listo para empezar?</div><h2>Un diagnóstico.<br><em>Sin costo.</em> Sin rodeos.</h2><p class="lead lead-c">Cuéntanos de tu negocio por correo y te respondemos con un análisis de tu situación digital actual — y qué haríamos nosotros para mejorarla.</p><div class="btn-row" style="justify-content:center;margin-top:6px"><a id="cta-final" href="#" class="btn-main"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>Solicitar Diagnóstico Digital</a><a href="#servicios" class="btn-ghost">Ver servicios →</a></div>
+<div class="contact-row"><div class="cc"><div class="cc-l">Correo</div><div class="cc-v"><a id="cc-email" href="#"></a></div></div><div class="cc"><div class="cc-l">Ciudad</div><div class="cc-v">Cali, Valle del Cauca, Colombia</div></div><div class="cc"><div class="cc-l">Horario de respuesta</div><div class="cc-v" id="cc-horario"></div></div><div class="cc"><div class="cc-l">WhatsApp</div><div class="cc-v"><span class="wa-soon"><span>⏳</span> Próximamente</span></div></div></div></div></div></section>
+
+<footer class="z1"><div class="ft"><div class="ft-top"><div class="footer-brand"><div class="fb-logo">Nexo<span>IA</span></div><p>Gestión de contenido e inteligencia artificial para negocios locales en Cali, Colombia. Tu presencia digital, en automático.</p><div style="margin-top:20px"><span class="wa-soon"><span>💬</span> WhatsApp — próximamente</span></div></div>
+<div class="ft-col"><h4>Servicios</h4><ul><li><a href="#servicios">Gestión de contenido</a></li><li><a href="#servicios">Optimización digital</a></li><li><a href="#servicios">Auditoría de impacto</a></li><li><a href="#diagnostico">Diagnóstico inicial</a></li></ul></div>
+<div class="ft-col"><h4>Empresa</h4><ul><li><a href="#proceso">Cómo trabajamos</a></li><li><a href="#sectores">Sectores</a></li><li><a href="#faq">Preguntas frecuentes</a></li><li><a href="#diagnostico">Planes</a></li></ul></div>
+<div class="ft-col"><h4>Contacto</h4><ul><li><a id="ft-email" href="#"></a></li><li><a href="#faq">Preguntas frecuentes</a></li><li><span style="color:var(--muted);font-size:13px" id="ft-horario"></span></li></ul></div></div>
+<div class="ft-bot"><p>© 2026 <strong>NexoIA</strong> · <span id="ft-ciudad"></span> · Colombia</p><p>Fundado por <strong id="ft-fundador">Santiago Restrepo Vélez</strong> · Hecho con 💚 para negocios reales</p><p style="font-family:var(--fm);font-size:11px;color:var(--green);letter-spacing:.5px">"Automatiza. Crece. Descansa."</p></div></div></footer>
+
+<script>
+/* ════════════════════════════════════════════════════════
+   NEXOIA — VARIABLES GLOBALES
+   ════════════════════════════════════════════════════════ */
+const NEXOIA = {
+  email:        "nexoia.cali@gmail.com",
+  whatsapp:     "",
+  instagram:    "",
+  tiktok:       "",
+  fundador:     "Santiago Restrepo Vélez",
+  ciudad:       "Cali, Valle del Cauca",
+  pais:         "Colombia",
+  horario:      "Lun–Vie 8am–7pm · Sáb 9am–1pm",
+  asunto_cta:   "Solicitud de Diagnóstico Digital - NexoIA",
+  asunto_redes: "Solicitud de Diagnóstico de Redes - NexoIA",
+  asunto_audit: "Solicitud de Auditoría de Impacto - NexoIA",
+};
+
+/* ── Aplicar variables globales a todos los elementos ── */
+document.addEventListener('DOMContentLoaded', () => {
+  const mailtoBase = `https://mail.google.com/mail/?view=cm&fs=1&to=${NEXOIA.email}&su=`;
+  const bodyPre    = encodeURIComponent('Hola NexoIA,\n\nMe interesa el Diagnóstico Digital para mi negocio en Cali.\n\nNombre del negocio: \nTipo de negocio: \nRedes sociales actuales: \nPrincipal objetivo: \n\nQuedo atento/a a su respuesta.');
+
+  const ctas = {
+    'cta-hero':   NEXOIA.asunto_cta,
+    'cta-final':  NEXOIA.asunto_cta,
+    'nav-cta':    NEXOIA.asunto_cta,
+    'btn-diag1':  NEXOIA.asunto_audit,
+    'btn-diag2':  NEXOIA.asunto_redes,
+    'btn-diag3':  NEXOIA.asunto_audit,
+    'tb-link':    NEXOIA.asunto_cta,
+  };
+  Object.entries(ctas).forEach(([id, asunto]) => {
+    const el = document.getElementById(id);
+    if (el) el.href = mailtoBase + encodeURIComponent(asunto) + '&body=' + bodyPre;
+  });
+
+  ['cc-email', 'ft-email'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.href = `https://mail.google.com/mail/?view=cm&fs=1&to=${NEXOIA.email}&su=${encodeURIComponent(NEXOIA.asunto_cta)}&body=${bodyPre}`;
+      el.textContent = NEXOIA.email;
+    }
+  });
+
+  const setText = (id, val) => { const el = document.getElementById(id); if (el && val) el.textContent = val; };
+  setText('ft-ciudad',   NEXOIA.ciudad);
+  setText('ft-fundador', NEXOIA.fundador);
+  setText('ft-horario',  NEXOIA.horario);
+  setText('cc-horario',  NEXOIA.horario);
+});
+
+/* ── Scroll animations ── */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vis'); io.unobserve(e.target); } });
+}, { threshold: .1 });
+document.querySelectorAll('.fade').forEach(el => io.observe(el));
+
+/* ── FAQ toggle ── */
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
+/* ── Mobile nav ── */
+function toggleNav() {
+  const links = document.getElementById('navlinks');
+  const isOpen = links.style.display === 'flex';
+  if (isOpen) {
+    links.style.display = '';
+  } else {
+    links.style.cssText = 'display:flex;flex-direction:column;position:absolute;top:66px;left:0;right:0;background:rgba(6,16,10,.98);padding:16px 20px 24px;border-bottom:1px solid rgba(77,186,135,.12);z-index:99;gap:4px';
+  }
+}
+
+/* ── Active nav link on scroll ── */
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+function updateActiveLink() {
+  let current = '';
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 100;
+    if (pageYOffset >= sectionTop) current = section.getAttribute('id');
+  });
+  navLinks.forEach(link => {
+    link.classList.remove('nav-cta'); // keep cta style but avoid conflict
+    const href = link.getAttribute('href');
+    if (href === `#${current}`) link.style.color = 'var(--green)';
+    else link.style.color = '';
+  });
+}
+window.addEventListener('scroll', updateActiveLink);
+window.addEventListener('load', updateActiveLink);
+</script>
+</body>
+</html>
