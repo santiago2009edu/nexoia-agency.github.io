@@ -552,5 +552,107 @@ function updateActiveLink() {
 window.addEventListener('scroll', updateActiveLink);
 window.addEventListener('load', updateActiveLink);
 </script>
+  <!-- ════════════════════════════════════════════════════════════ -->
+<!-- SECCIÓN DE FLYERS + INSTAGRAM (para integrar al final)      -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<section id="flyers" class="section z1" style="background:var(--bg2)">
+<div class="container">
+  <div class="eyebrow">Material promocional</div>
+  <h2>Flyers listos para <em>compartir o imprimir</em></h2>
+  <p class="lead" style="margin-bottom:24px">Descarga, comparte en historias o usa estos diseños como base para tu publicidad. Cada flyer incluye llamado a la acción y nuestros datos de contacto.</p>
+  
+  <div class="flyer-grid">
+    <!-- Flyer 1: Diagnóstico gratuito -->
+    <div class="flyer-card fade">
+      <div class="flyer-badge">🔥 OFERTA LIMITADA</div>
+      <div class="flyer-title">Diagnóstico <span>Digital</span><br>Sin costo</div>
+      <div class="flyer-desc">Analizamos tu presencia online, redes sociales y competencia local. Recibe un reporte con acciones concretas para crecer.</div>
+      <div class="flyer-offer">📲 Incluye: revisión de perfil, alcance orgánico y recomendaciones IA.</div>
+      <div class="flyer-cta">
+        <a id="flyer1-cta" href="#" class="btn-main" style="padding:8px 18px; font-size:13px">Reclamar diagnóstico →</a>
+        <div class="qr-sim" title="Escanea para contacto">📧</div>
+      </div>
+      <div style="margin-top:16px; font-size:11px; color:var(--muted); display:flex; gap:12px; justify-content:space-between">
+        <span>✧ @nexoia_cali</span>
+        <span>✧ nexoia.cali@gmail.com</span>
+      </div>
+    </div>
+
+    <!-- Flyer 2: Gestión de contenido IA -->
+    <div class="flyer-card fade" style="transition-delay:0.1s">
+      <div class="flyer-badge">🚀 MÁS VENDIDO</div>
+      <div class="flyer-title">Contenido <span>automático</span><br>20 posts/mes</div>
+      <div class="flyer-desc">Diseños profesionales, captions con IA, publicación automática en Instagram, Facebook y TikTok.</div>
+      <div class="flyer-offer">🎯 Incluye: historias, reels, respuesta a comentarios y reporte mensual.</div>
+      <div class="flyer-cta">
+        <a id="flyer2-cta" href="#" class="btn-main" style="padding:8px 18px; font-size:13px">Quiero este plan →</a>
+        <div class="qr-sim">🤖</div>
+      </div>
+      <div style="margin-top:16px; font-size:11px; color:var(--muted); display:flex; gap:12px; justify-content:space-between">
+        <span>📸 @nexoia_cali</span>
+        <span>⏳ 2 días de activación</span>
+      </div>
+    </div>
+
+    <!-- Flyer 3: Especial para emprendedores Cali -->
+    <div class="flyer-card fade" style="transition-delay:0.2s">
+      <div class="flyer-badge">📍 SOLO CALI</div>
+      <div class="flyer-title">Emprende <span>visible</span><br>Desde $0 de inversión</div>
+      <div class="flyer-desc">Primer mes de gestión con 30% de descuento para negocios nuevos en Cali, Yumbo, Jamundí o Palmira.</div>
+      <div class="flyer-offer">🎁 Bonos: optimización de Google Business + kit de 10 plantillas Canva.</div>
+      <div class="flyer-cta">
+        <a id="flyer3-cta" href="#" class="btn-main" style="padding:8px 18px; font-size:13px">Aprovechar descuento →</a>
+        <div class="qr-sim">💚</div>
+      </div>
+      <div style="margin-top:16px; font-size:11px; color:var(--muted); display:flex; gap:12px; justify-content:space-between">
+        <span>✧ Cupos limitados</span>
+        <span>✧ Síguenos @nexoia_cali</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Prompt para Claude (oculto en detalles) -->
+  <div style="margin-top: 48px; background: var(--surface); border-radius: 20px; padding: 24px; border: 1px solid var(--border2);">
+    <details>
+      <summary style="font-weight: 600; cursor: pointer; color: var(--green); font-family: var(--fm);">📄 PROMPT para que Claude genere más flyers personalizados</summary>
+      <div style="margin-top: 20px; font-size: 14px; line-height: 1.7; background: var(--bg3); padding: 20px; border-radius: 16px; font-family: monospace; white-space: pre-wrap; color: var(--white2);">
+        ✦✦✦ COPIA ESTE PROMPT Y PÉGALO EN CLAUDE.AI ✦✦✦
+
+        "Actúa como un diseñador experto en marketing digital. Necesito que crees 3 flyers publicitarios para NexoIA, una agencia de automatización con IA en Cali, Colombia.
+
+        Datos de la marca:
+        - Nombre: NexoIA
+        - Instagram: @nexoia_cali
+        - Correo: nexoia.cali@gmail.com
+        - Servicios: Gestión de contenido con IA (20+ posts/mes), optimización de visibilidad digital, auditoría de impacto.
+        - Público: dueños de restaurantes, peluquerías, tiendas, consultorios, emprendedores en Cali.
+
+        Cada flyer debe:
+        - Ser vertical (formato historia o post 4:5)
+        - Tener fondo oscuro con acentos en verde neón (#4DBA87)
+        - Incluir título llamativo, 3 beneficios clave, un call-to-action claro y el handle de Instagram.
+        - Ser apto para imprimir o compartir en redes.
+
+        Genera el diseño en formato HTML+CSS (responsive, listo para copiar) con tres variantes:
+        1. Flyer de "Diagnóstico Digital Gratuito"
+        2. Flyer de "Gestión de Contenido 20 posts/mes"
+        3. Flyer de "Descuento 30% para nuevos negocios en Cali"
+
+        Añade íconos, bordes sutiles y un efecto de brillo. Dame el código completo que pueda incrustar en una web."
+      </div>
+    </details>
+  </div>
+</div>
+</section>
+
+<!-- También puedes añadir un bloque de Instagram en el footer o contacto -->
+<div style="text-align: center; margin: 20px 0 40px;">
+  <a href="https://instagram.com/nexoia_cali" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 12px; background: var(--surface); border: 1px solid var(--border2); border-radius: 60px; padding: 12px 28px; color: var(--white); text-decoration: none; transition: 0.2s;">
+    <span style="font-size: 28px;">📸</span>
+    <span style="font-weight: 600;">Síguenos en Instagram</span>
+    <span style="color: var(--green);">@nexoia_cali</span>
+    <span>→</span>
+  </a>
+</div>
 </body>
 </html>
